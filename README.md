@@ -1,3 +1,29 @@
+# README
+
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
 
 # freemarket_sample_66i DB設計
 ## usersテーブル
@@ -14,7 +40,26 @@
 - has_many :pays
 - has_many :messages
 - has_many :shipping
-- has_many :items
+- has_many :buyer
+- has_many :saler
+
+## buyerテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :items_id
+
+## salerテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :users
+- belongs_to :items_id
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -37,7 +82,8 @@
 |y_categorys_id|references|foreign_key: true|
 |z_categorys_id|references|foreign_key: true|
 ### Association
-- belongs_to :users
+- has_many :buyer
+- has_many :saler
 - belongs_to :brands
 - has_many : images
 - belongs_to : x_category
