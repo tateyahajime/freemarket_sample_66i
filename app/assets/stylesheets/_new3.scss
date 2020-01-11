@@ -1,0 +1,202 @@
+.new3 {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  height: 100%;
+  &__header {
+    display: flex;
+    height: 128px;
+    background-color: rgb(245, 245, 245);
+    align-items: center;
+    &-logo {
+      width: 185px;
+      margin-left: 365px;
+      a:hover {
+        opacity: 0.7;
+      
+      }
+    }
+    &-current {
+      display: flex;
+      &-text {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+      &-text1 {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+      &-text2 {
+        font-size: 12px;
+        color: red;
+        margin-left: 45px;
+        
+      }
+      &-text3 {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+      &-text4 {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+    }
+    &-image {
+      display: block;
+    }
+  }
+
+  &__form {
+    width: 700px;
+    // height: 100%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    &-title {
+      height: 63px;
+      font-weight: 600;
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+      line-height: 63px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    &-box {
+      width: 343px;
+      // height: 100vh;
+      margin: 0 auto;
+      &-area {
+        display: flex;
+        &-title {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        &-required {
+          color: #ffffff;
+          background-color: red;
+          margin-left: 20px;
+          border-radius: 3px;
+          font-size: 14px;
+        }  
+      }
+      &-form {
+        font-size: 14px;
+        &-na {
+          font-size: 16px;
+          // padding: 10px 16px 8px;
+          padding: 10px 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          margin-bottom: 10px;
+          margin-top: 2px;
+          width: 100%;
+        }
+        &-me {
+          font-size: 16px;
+          // padding: 10px 16px 8px;
+          padding: 10px 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          width: 100%;
+
+        }
+        &-pre {
+          font-size: 16px;
+          // padding: 10px 16px 8px;
+          padding: 10px 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          margin-bottom: 10px;
+          margin-top: 2px;
+          width: 345px;
+          height: 46px;
+        }
+
+        &-area {
+          display: flex;
+          margin-top: 40px;
+          &-title-1 {
+            font-size: 14px;
+            font-weight: 600;
+          }
+          &-required-1 {
+            color: #ffffff;
+            background-color: red;
+            margin-left: 20px;
+            border-radius: 3px;
+            font-size: 14px;
+          }
+          &-required-2 {
+            color: #ffffff;
+            background-color: grey;
+            margin-left: 20px;
+            border-radius: 3px;
+            font-size: 14px;
+          }
+
+        }
+        // input {
+        //   // cursor: pointer;
+        //   width: 100%;
+        //   background-color:#ffffff;
+        //   // border: 1px solid #ea352d;
+        //   padding: 10px 0;
+        //   color: #ffffff;
+        // }
+        .new3btn {
+          width: 100%;
+          background-color:#ea352d;
+          cursor: pointer;
+          border: 1px solid #ea352d;
+          padding: 10px 0;
+          margin: 30px 0 10px 0;
+          color: #ffffff;
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+  &__footer {
+    height: 220px;
+    background-color: rgb(245, 245, 245);
+    &-links {
+      display: flex;
+      width: 456px;
+      margin: 0 auto;
+      font-size: 12px;
+      &-title {
+        margin: 0 auto;
+        display: block;
+        margin-top: 40px;
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+        a:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+      
+    }
+    &-image {
+      width: 185px;
+      margin: 0 auto;
+      margin-top:40px;
+      a:hover {
+        opacity: 0.7; 
+      }
+    }
+    &-end {
+      text-align: center;
+    }
+  }
+}
