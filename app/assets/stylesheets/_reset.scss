@@ -1,3 +1,4 @@
+
 /*
 	TODO will need to remove settings on HTML since we can't namespace it.
 	TODO with the prefix, should I group by selector or property for weight savings?
@@ -38,6 +39,7 @@ p,
 blockquote,
 th,
 td {
+
 	margin:0;
 	padding:0;
 }
@@ -61,17 +63,20 @@ em,
 strong,
 th,
 var {
+
 	font-style:normal;
 	font-weight:normal;
 }
 
 ol,
 ul {
+
 	list-style:none;
 }
 
 caption,
 th {
+
 	text-align:left;
 }
 h1,
@@ -80,6 +85,7 @@ h3,
 h4,
 h5,
 h6 {
+
 	font-size:100%;
 	font-weight:normal;
 }
@@ -102,6 +108,7 @@ sub {
 input,
 textarea,
 select {
+
 	font-family:inherit;
 	font-size:inherit;
 	font-weight:inherit;
