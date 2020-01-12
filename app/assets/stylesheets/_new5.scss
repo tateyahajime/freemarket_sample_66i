@@ -1,0 +1,189 @@
+.new5 {
+  background-color: rgb(245, 245, 245);
+  width: 100vw;
+  height: 100vh;
+  &__header {
+    display: flex;
+    height: 128px;
+    background-color: rgb(245, 245, 245);
+    align-items: center;
+    &-logo {
+      width: 185px;
+      margin-left: 365px;
+      a:hover {
+        opacity: 0.7;
+      
+      }
+    }
+    &-current {
+      display: flex;
+      &-text {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+      &-text1 {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+      &-text2 {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+        
+      }
+      &-text3 {
+        font-size: 12px;
+        color: #888;
+        margin-left: 45px;
+      }
+      &-text4 {
+        font-size: 12px;
+        color: red;
+        margin-left: 45px;
+      }
+    }
+    &-image {
+      display: block;
+    }
+  }
+
+  &__form {
+    width: 700px;
+    height: 330px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    &-title {
+      // height: 63px;
+      font-weight: 600;
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+      // line-height: 63px;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    &-box {
+      width: 343px;
+      height: 227px; 
+      margin: 0 auto;
+      &-phone {
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 50px;
+      }
+      &-form {
+        font-size: 14px;
+        &-a {
+          font-size: 16px;
+          // padding: 10px 16px 8px;
+          padding: 10px 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          width: 100%;
+        }
+        &-b {
+          width: 100%;
+          background-color:#ea352d;
+          cursor: pointer;
+          border: 1px solid #ea352d;
+          padding: 10px 0;
+          margin: 60px 0 10px 0;
+          color: #ffffff;
+        }
+      }
+      &-link {
+        margin-top: 33px;
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 14px;
+        a {
+          color: #0099e8;
+          text-decoration: none;
+        }
+        a:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__footer1 {
+    &-upper {
+      width: 100%;
+      &-main {
+        background-image: url("footer.jpeg");
+        height: 260px;
+        background-size: cover;
+        padding: 30px 24%;
+        font-weight: 600;
+        text-align: center;
+        &-text1 {
+          font-size: 24px;
+          margin-bottom: 15px;
+        }
+        &-text2 {
+          font-size: 35px;
+          margin-bottom: 15px;
+        }
+        &-logo {
+          display: flex;
+          height: 68px;
+          &-mercari {
+            height: 68px;
+            width: 68px;
+            margin-right: 20px;
+            margin: 0 auto;
+          }
+          &-AppStore {
+            padding-right: 20px;
+            padding-top: 20px;
+            margin: 0 auto;
+          }
+          &-GooglePlay {
+            padding-top: 20px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }  
+  &__footer {
+    height: 220px;
+    background-color: rgb(245, 245, 245);
+    &-links {
+      display: flex;
+      width: 456px;
+      margin: 0 auto;
+      font-size: 12px;
+      &-title {
+        margin: 0 auto;
+        display: block;
+        margin-top: 40px;
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+        a:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+      
+    }
+    &-image {
+      width: 68px;
+      margin: 0 auto;
+      margin-top:40px;
+      a:hover {
+        opacity: 0.7; 
+      }
+    }
+    &-end {
+      text-align: center;
+    }
+  }
+}

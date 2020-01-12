@@ -1,0 +1,59 @@
+.new5
+  .new5__header
+    .new5__header-logo
+      = link_to image_tag(src="fmarket_logo_red.svg"),root_path
+    .new5__header-current
+      .new5__header-current-text
+        会員情報
+      .new5__header-current-text1
+        電話番号認証
+      .new5__header-current-text2
+        お届け先住所入力
+      .new5__header-current-text3
+        支払い方法
+      .new5__header-current-text4
+        完了
+    .new5__header-image
+      .new5__header-image-1
+        
+  .new5__form
+    .new5__form-title
+      会員登録完了
+    .new5__form-box
+      .new5__form-box-phone
+        ありがとうございました。
+        会員登録完了しました。
+      .new5__form-box-form
+        =form_with do |f|  
+          =f.submit "メルカリをはじめる", class: "new5__form-box-form-b"
+
+  .new5__footer1
+  .new5__footer1-upper
+    .new5__footer1-upper-main
+      %p.new5__footer1-upper-main-text1
+        スマホでかんたんフリマアプリ
+      %p.new5__footer1-upper-main-text2
+        今すぐ無料ダウンロード！
+      .new5__footer1-upper-main-logo
+        .new5__footer1-upper-main-logo-mercari
+          = link_to image_tag(src="logo_red.svg"),root_path
+        .new5__footer1-upper-main-logo-AppStore
+          = link_to image_tag(src="https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg"),"https://apps.apple.com/jp/app/id667861049?l=ja"
+        .new5__footer1-upper-main-logo-GooglePlay
+          = link_to image_tag(src="https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+          
+      
+  .new5__footer
+    .new5__footer-links
+      .new5__footer-links-title
+        =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      .new5__footer-links-title
+        =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      .new5__footer-links-title
+        =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .new5__footer-image
+      = link_to image_tag(src="logo_white.svg"),root_path
+    .new5__footer-end
+      © Mercari, Inc.
+
+  
