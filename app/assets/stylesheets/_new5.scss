@@ -1,4 +1,4 @@
-.new2 {
+.new5 {
   background-color: rgb(245, 245, 245);
   width: 100vw;
   height: 100vh;
@@ -24,7 +24,7 @@
       }
       &-text1 {
         font-size: 12px;
-        color: red;
+        color: #888;
         margin-left: 45px;
       }
       &-text2 {
@@ -40,7 +40,7 @@
       }
       &-text4 {
         font-size: 12px;
-        color: #888;
+        color: red;
         margin-left: 45px;
       }
     }
@@ -51,7 +51,7 @@
 
   &__form {
     width: 700px;
-    height: 498px;
+    height: 330px;
     background-color: #ffffff;
     margin: 0 auto;
     &-title {
@@ -65,7 +65,7 @@
     }
     &-box {
       width: 343px;
-      height: 327px; 
+      height: 227px; 
       margin: 0 auto;
       &-phone {
         font-size: 14px;
@@ -90,7 +90,7 @@
           cursor: pointer;
           border: 1px solid #ea352d;
           padding: 10px 0;
-          margin: 30px 0 10px 0;
+          margin: 60px 0 10px 0;
           color: #ffffff;
         }
       }
@@ -110,6 +110,47 @@
       }
     }
   }
+
+  &__footer1 {
+    &-upper {
+      width: 100%;
+      &-main {
+        background-image: url("footer.jpeg");
+        height: 260px;
+        background-size: cover;
+        padding: 30px 24%;
+        font-weight: 600;
+        text-align: center;
+        &-text1 {
+          font-size: 24px;
+          margin-bottom: 15px;
+        }
+        &-text2 {
+          font-size: 35px;
+          margin-bottom: 15px;
+        }
+        &-logo {
+          display: flex;
+          height: 68px;
+          &-mercari {
+            height: 68px;
+            width: 68px;
+            margin-right: 20px;
+            margin: 0 auto;
+          }
+          &-AppStore {
+            padding-right: 20px;
+            padding-top: 20px;
+            margin: 0 auto;
+          }
+          &-GooglePlay {
+            padding-top: 20px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }  
   &__footer {
     height: 220px;
     background-color: rgb(245, 245, 245);
