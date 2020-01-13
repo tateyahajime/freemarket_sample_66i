@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # get 'mercaris', to: 'mercaris#form'
   resources :mercaris do
     collection do
-      get :new, :form1
+      get :new, :form1, :new1
+       
     end
   end
 end
