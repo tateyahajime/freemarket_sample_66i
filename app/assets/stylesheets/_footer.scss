@@ -1,0 +1,207 @@
+.footer {
+  &__upper {
+    width: 100%;
+    &__main {
+      background-image: url("footer.jpeg");
+      height: 260px;
+      background-size: cover;
+      padding: 30px 24%;
+      font-weight: 600;
+      &__text1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+      &__text2 {
+        font-size: 35px;
+        margin-bottom: 15px;
+      }
+      &__logo {
+        display: flex;
+        height: 68px;
+        &__mercari {
+          height: 68px;
+          width: 68px;
+          margin-right: 20px;
+        }
+        &__AppStore {
+          padding-right: 20px;
+          padding-top: 20px;
+        }
+        &__GooglePlay {
+          padding-top: 20px;
+        }
+      }
+      
+      
+    }
+  }
+  &__lower {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    padding: 0px 13% 10px;
+    &__upper-box {
+      width: 100%;
+      margin: 0px auto;
+      display: flex;
+      // flex-wrap: wrap;
+      &__left {
+        // width: 50%;
+        display: inline-block;
+        margin-top: 18px;
+        vertical-align: top;
+        padding: 0px 13px;
+        &__head {
+        font-size: 16px;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        font-weight: 600;
+        line-height: 1.4em;
+        }
+        &__comments {
+          font-size: 12px;
+          
+          list-style: none;
+          &__comment {
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            a {
+              text-decoration: none;
+              color: rgb(255, 255, 255);
+              opacity: 0.7;
+            }
+          }
+          &__logo {
+            display: inline-block;
+            margin-top: 30px;
+            &__twitter {
+              font-size: 30px;
+              margin-right: 20px;
+              color: white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      &__right {
+        // width: 50%;
+        display: inline-block;
+        margin-top: 18px;
+        vertical-align: top;
+        padding: 0px 13px;
+        &__head {
+        font-size: 16px;
+        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+        font-weight: 600;
+        line-height: 1.4em;
+        }
+        &__comments {
+          font-size: 12px;
+          list-style: none;
+          &__comment {
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            a {
+              text-decoration: none;
+              color: rgb(255, 255, 255);
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      &__middle {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 18px;
+        // width: 100%;
+        padding: 0px 13px;
+        &__head {
+          font-size: 16px;
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-weight: 600;
+          line-height: 1.4em;
+          }
+        &__comments {
+          font-size: 12px;
+          list-style: none;
+          display: flex;
+          vertical-align: top;
+          &__left {
+            width: 50%;
+            &__comment {
+              line-height: 1.4em;
+              margin: 16px 0px 0px;
+              a {
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                opacity: 0.7;
+              }
+            }
+          }
+          &__right {
+            padding-left: 10px;
+            &__comment {
+              line-height: 1.4em;
+              margin: 16px 0px 0px;
+              a {
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                opacity: 0.7;
+              }
+            }
+          }
+        }
+      }
+      &__bottom {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 18px;
+        // width: 100%;
+        padding: 0px 13px;
+        &__head {
+          font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+          font-weight: 600;
+          line-height: 1.4em;
+          font-size: 16px;
+        }
+        &__country {
+          // display: flex;
+          &__name {
+            font-size: 14px;
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            a {
+              text-decoration: none;
+              color: rgb(255, 255, 255);
+              opacity: 0.7;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+
+
+    &__lower-box {
+      width: 100%;
+      margin: 55px auto 10px;
+      display: flex;
+      &__logo {
+        background-color: white;
+        width: 125px;
+        height: 40px;
+        
+        &__image {
+          line-height: 40px;
+          height: 36px;
+          width: 134px;
+        }
+      }
+      &__comment {
+        font-size: 12px;
+        padding-left: 15px;
+        width: 75%;
+        text-align: center;
+        line-height: 40px;
+      }
+    }
+  }
+}
