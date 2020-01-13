@@ -8,8 +8,6 @@
   }
   &__product {
     width: 700px;
-    // height: 100vh;
-    // height: 1121px;
     height: 100%;
     background-color: #ffffff;
     margin: 0 auto;
@@ -151,12 +149,10 @@
       height: 50px;
       margin-top: 24px;
       background-color: #ffffff;
-      // display: flex;
       text-align: center;
       &-1 {
         font-size: 50px;
         font-weight: 600px;
-        // margin-left: 190px;
         margin-right: 16px;
         font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
       }
@@ -245,7 +241,6 @@
     }
     &-area {
       margin-top: 10px;
-      // padding: 8px;
       display: block;
       &-comment {
         width: 100%;
@@ -291,7 +286,6 @@
     background-color: #ffffff;
     margin: 0 auto;
     padding: 46px 0 16px 0;
-    // margin-bottom: 24px;
     display: flex;
     position: relative;
     &-facebook {
@@ -343,9 +337,7 @@
     height: 100%;
     margin: 0 auto;
     background-color: rgb(245, 245, 245);
-    // background-color: blue;
     display: flex;
-    // justify-content: space-between;
     flex-wrap:wrap;
     &-area {
       width: 220px;
