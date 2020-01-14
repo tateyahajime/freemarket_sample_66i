@@ -1,2 +1,0 @@
-class XCategroy < ApplicationRecord
-end

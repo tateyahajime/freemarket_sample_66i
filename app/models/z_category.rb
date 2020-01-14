@@ -1,0 +1,2 @@
+class ZCategory < ApplicationRecord
+end
