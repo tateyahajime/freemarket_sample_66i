@@ -1,0 +1,131 @@
+.new1
+  .new1_header
+    .new1_header-logo
+      = link_to image_tag(src= "fmarket_logo_red.svg"),root_path
+    .new1_header-current
+      .new1_header-current-text
+        会員情報
+      .new1_header-current-text1
+        電話番号認証
+      .new1_header-current-text2
+        お届け先住所入力
+      .new1_header-current-text3
+        支払い方法
+      .new1_header-current-text4
+        完了
+  .new1_body
+    .new1_body_mainspace
+      .new1_body_mainspace_title
+        会員情報入力
+      .new1_body_mainspace_content
+        .new1_body_mainspace_content-nickname
+          .new1_body_mainspace_content-nickname-1
+            .new1_body_mainspace_content-nickname-1-title
+              ニックネーム
+            .new1_body_mainspace_content-nickname-1-hissu
+              必須
+          .new1_body_mainspace_content-nickname-field
+            =form_with do |f|
+              =f.text_field :nickname, placeholder: "例)メルカリ太郎", size: "60"
+        .new1_body_mainspace_content-mail
+          .new1_body_mainspace_content-mail-1
+            .new1_body_mainspace_content-mail-1-title
+              メールアドレス
+            .new1_body_mainspace_content-mail-1-hissu
+              必須
+          .new1_body_mainspace_content-mail-field
+            =form_with do |f|
+              =f.text_field :nickname, placeholder: "PC・携帯どちらでも可", size: "60"
+        .new1_body_mainspace_content-pass
+          .new1_body_mainspace_content-pass-1
+            .new1_body_mainspace_content-pass-1-title
+              パスワード
+            .new1_body_mainspace_content-pass-1-hissu
+              必須
+          .new1_body_mainspace_content-pass-field
+            =form_with do |f|
+              =f.text_field :nickname, placeholder: "7文字以上の半角英数字", size: "60"
+          .new1_body_mainspace_content-pass-message
+            .new1_body_mainspace_content-pass-message-checkbox
+              =check_box_tag :check1
+            .new1_body_mainspace_content-pass-message-1
+              パスワードを表示する
+        .new1_body_mainspace_content-kakunin
+          .new1_body_mainspace_content-kakunin-title
+            本人確認
+          .new1_body_mainspace_content-kakunin-content
+            安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .new1_body_mainspace_content-name
+          .new1_body_mainspace_content-name-1
+            .new1_body_mainspace_content-name-1-title
+              お名前（全角）
+            .new1_body_mainspace_content-name-1-hissu
+              必須
+          .new1_body_mainspace_content-name-field
+            .new1_body_mainspace_content-name-field-1
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "例)山田"
+            .new1_body_mainspace_content-name-field-2
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "例)綾"
+        .new1_body_mainspace_content-kananame
+          .new1_body_mainspace_content-kananame-1
+            .new1_body_mainspace_content-kananame-1-title
+              お名前カナ（全角）
+            .new1_body_mainspace_content-kananame-1-hissu
+              必須
+          .new1_body_mainspace_content-kananame-field
+            .new1_body_mainspace_content-kananame-field-1
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "例)ヤマダ"
+            .new1_body_mainspace_content-kananame-field-2
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "例)アヤ"
+        .new1_body_mainspace_content-birth
+          .new1_body_mainspace_content-birth-1
+            .new1_body_mainspace_content-birth-1-title
+              生年月日
+            .new1_body_mainspace_content-birth-1-hissu
+              必須
+          .new1_body_mainspace_content-birth-field
+            .new1_body_mainspace_content-birth-field-year
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "--", size: "15"
+              .new1_body_mainspace_content-birth-field-year-font
+                年
+            .new1_body_mainspace_content-birth-field-month
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "--", size: "15"
+              .new1_body_mainspace_content-birth-field-month-font
+                月
+            .new1_body_mainspace_content-birth-field-day
+              =form_with do |f|
+                =f.text_field :nickname, placeholder: "--", size: "15"
+              .new1_body_mainspace_content-birth-field-day-font
+                日
+        .new1_body_mainspace_content-attention
+          ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .new1_body_mainspace_content-riyoukiyaku
+          .new1_body_mainspace_content-riyoukiyaku-1
+            「次へ進む」のボタンを押すことにより、
+          .new1_body_mainspace_content-riyoukiyaku-2
+            =link_to "利用規約", "https://www.mercari.com/jp/tos_list/"
+        .new1_body_mainspace_content-riyoukiyaku-3
+          に同意したものとみなします
+        .new1_body_mainspace_content-next
+          次に進む
+        .new1_body_mainspace_content-details
+          =link_to "本人情報の登録について", "https://www.mercari.com/jp/help_center/article/423/"
+        
+  .new1_footer
+    .new1_footer-links
+      .new1_footer-links-title
+        =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      .new1_footer-links-title
+        =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      .new1_footer-links-title
+        =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .new1_footer-image
+      = link_to image_tag(src= "fmarket_logo_white.svg"),root_path
+    .new1_footer-end
+      © Mercari, Inc.

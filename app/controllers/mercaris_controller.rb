@@ -25,4 +25,7 @@ class MercarisController < ApplicationController
   def new5
   end
 
+  def new1
+  end
+  
 end
