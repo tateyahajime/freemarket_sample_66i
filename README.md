@@ -45,30 +45,21 @@ Things you may want to cover:
 - has_many :buyer
 - has_many :saler
 
-## buyerテーブル
+## relationshipテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|buyer_id|references|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
 |item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :users
-- belongs_to :items_id
-
-## salerテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|item_id|references|null: false, foreign_key: true|
-### Association
-- belongs_to :users
-- belongs_to :items_id
+- belongs_to :items
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |message|text||
 |user_id|references|null: false, foreign_key: true|
-
 ### Association
 - belongs_to :users
 
@@ -84,8 +75,8 @@ Things you may want to cover:
 |y_categorys_id|references|foreign_key: true|
 |z_categorys_id|references|foreign_key: true|
 ### Association
-- has_many :buyer
-- has_many :saler
+- belongs_to :users
+- belongs_to :relationship
 - belongs_to :brands
 - has_many : images
 - belongs_to : x_category
