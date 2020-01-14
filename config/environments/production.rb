@@ -88,7 +88,8 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-
+  
+  server "18.177.126.160", user: "ec2-user", roles: %w{app db web}
   set :rails_env, "production"
   set :unicorn_rack_env, "production"
   # Do not dump schema after migrations.
