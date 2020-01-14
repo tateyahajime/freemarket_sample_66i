@@ -89,9 +89,13 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
   
+  # server "db.example.com", user: "deploy", roles: %w{db}
   server "18.177.126.160", user: "ec2-user", roles: %w{app db web}
   set :rails_env, "production"
   set :unicorn_rack_env, "production"
+
+  # role-based syntax
+  # ==================
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
