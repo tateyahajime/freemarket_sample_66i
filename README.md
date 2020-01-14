@@ -34,10 +34,19 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
-|name|string|null: false|
-|adress|text|null: false|
+|first_name||
+|last_name|
+|kana_first_name|
+|kana_last_name|
+|zip_code|
+|prefectures|
+|city|
+|street|
 |phone|integer|null: false|
-|birthday|datetime||
+|birth_year|
+|birth_manth|
+|birth_day|
+
 ### Association
 - has_many :pays
 - has_many :messages
