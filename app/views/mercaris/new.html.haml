@@ -1,1 +1,40 @@
-aaaaaa
+.new
+  .new__header
+    .new__header-logo 
+      =link_to image_tag("fmarket_logo_red.svg"),root_path
+  .new__main
+    .new__main-title
+      新規会員登録
+    .new__main-mail
+      メールアドレスで登録する
+      .new__main-mail-logo
+        = link_to root_path do
+          = icon('fas', 'envelope', class: "new__main-mail-logo-1")
+    .new__main-facebook
+      Facebookで登録する
+      .new__main-facebook-logo
+        = link_to root_path do
+          = icon('fab', 'facebook-square', class:"new__main-facebook-logo-2")
+          
+    .new__main-google
+      Googleで登録する
+      .new__main-google-logo
+        = link_to root_path do
+          =icon('fab', 'google', class:"new__main-google-logo-3")
+  .new__footer
+    .new__footer-links
+      .new__footer-links-title
+        = link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      .new__footer-links-title
+        =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      .new__footer-links-title
+        =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .new__footer-logo
+      =link_to image_tag("logo_white.svg"),root_path
+    .new__footer-end
+      © Mercari, Inc.
+
+      
+      
+   
+    

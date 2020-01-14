@@ -28,4 +28,12 @@ class MercarisController < ApplicationController
   def exhibition
   end
 
+  def out
+  end
+
+
+  def new1
+  end
+  
+
 end

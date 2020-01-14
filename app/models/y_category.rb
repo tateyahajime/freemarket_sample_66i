@@ -1,0 +1,2 @@
+class YCategory < ApplicationRecord
+end
