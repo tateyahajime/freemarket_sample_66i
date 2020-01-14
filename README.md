@@ -2,31 +2,6 @@
 # README
 
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
 # freemarket_sample_66i DB設計
 ## usersテーブル
 |Column|Type|Options|
@@ -42,7 +17,7 @@ Things you may want to cover:
 |prefectures|string|
 |city|string|
 |street|
-|phone|integer|null: false|
+|phone|integer|
 |birth_year|date|
 |birth_manth|date|
 |birth_day|date|
@@ -104,17 +79,30 @@ Things you may want to cover:
 ## paysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|method|integer||
+|card_number|integer|null: false|
 |user_id|refernce|null: false, foreign_key: true|
+|expiration_date_month|date|
+|expiration_date_year|date|
+|security_code|integer|
 ### Association
 - belongs_to :users
 
 ## shippingsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|shipping_charges|integer||
-|area|text||
-|date|datetime||
+|shipping_charges|integer|
+|area|text|
+|date|datetime|
+|first_name|string|
+|last_name|string|
+|kana_first_name|string|
+|kana_last_name|string|
+|zip_code|integer|
+|prefectures|string|
+|city|string|
+|street|string|
+|building_name|string|
+|phon|integer|
 ### Association
 - belongs_to :users
 
