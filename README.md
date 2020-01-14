@@ -34,18 +34,18 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |nickname|string|null: false|
-|first_name||
-|last_name|
-|kana_first_name|
-|kana_last_name|
-|zip_code|
-|prefectures|
-|city|
+|first_name|string|
+|last_name|string|
+|kana_first_name|string|
+|kana_last_name|string|
+|zip_code|integer|
+|prefectures|string|
+|city|string|
 |street|
 |phone|integer|null: false|
-|birth_year|
-|birth_manth|
-|birth_day|
+|birth_year|date|
+|birth_manth|date|
+|birth_day|date|
 
 ### Association
 - has_many :pays
