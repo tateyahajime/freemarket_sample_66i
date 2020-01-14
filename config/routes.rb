@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # get 'mercaris', to: 'mercaris#form'
   resources :mercaris do
     collection do
-      get :form1,:new1, :new2, :new3, :new4, :new5, :out
+     
+      get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out
     end
   end
   resources :items
