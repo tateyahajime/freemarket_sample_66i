@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_01_14_115540) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,6 +62,45 @@ ActiveRecord::Schema.define(version: 2020_01_14_115540) do
     t.index ["x_category_id"], name: "index_items_on_x_category_id"
     t.index ["y_category_id"], name: "index_items_on_y_category_id"
     t.index ["z_category_id"], name: "index_items_on_z_category_id"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "message"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "pays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "card_number"
+    t.date "expiration_date_month"
+    t.date "expiration_date_year"
+    t.integer "security_code"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pays_on_user_id"
+  end
+
+  create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "charges"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "kana_first_name"
+    t.string "kana_last_name"
+    t.integer "zip_code"
+    t.string "prefectures"
+    t.string "city"
+    t.string "street"
+    t.string "building_name"
+    t.integer "phone"
+    t.string "area"
+    t.date "date"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shippings_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -116,6 +156,9 @@ ActiveRecord::Schema.define(version: 2020_01_14_115540) do
   add_foreign_key "items", "x_categories"
   add_foreign_key "items", "y_categories"
   add_foreign_key "items", "z_categories"
+  add_foreign_key "messages", "users"
+  add_foreign_key "pays", "users"
+  add_foreign_key "shippings", "users"
   add_foreign_key "y_categories", "x_categories"
   add_foreign_key "z_categories", "y_categories"
 end
