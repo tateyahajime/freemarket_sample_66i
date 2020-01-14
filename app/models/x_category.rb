@@ -1,0 +1,3 @@
+class XCategory < ApplicationRecord
+  
+end
