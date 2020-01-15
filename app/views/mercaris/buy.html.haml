@@ -1,0 +1,58 @@
+.buy
+  .buy_header
+    .buy_header-logo
+      = link_to image_tag(src= "fmarket_logo_red.svg"),root_path
+  .buy_main
+    .buy_main-title
+      商品購入の確認
+    .buy_main-content
+      .buy_main-content-image
+        = link_to image_tag(src= "himawari.jpg",class: "main_content_imagefot")
+      .buy_main-content-name
+        手帳2020
+        .buy_main-content-name-prace
+          ¥500 (税込み) 送料込み
+    .buy_main-detail
+      .buy_main-detail-pay
+        支払い金額
+        .buy_main-detail-pay-money
+          ¥500
+      .buy_main-detail-credit
+        .buy_main-detail-credit-title
+          支払い方法
+          .buy_main-detail-credit-henkou
+            =link_to "変更する", ""
+        .buy_main-detail-credit-name
+          クレジットカード
+        .buy_main-detail-credit-number
+          *************1111
+        .buy_main-detail-credit-kigen
+          有効期限 11/24
+        .buy_main-detail-credit-logo
+          VISA
+      .buy_main-detail-address
+        .buy_main-detail-address-title
+          配送先
+          .buy_main-detail-address-henkou
+            =link_to "変更する", ""
+        .buy_main-detail-address-zipcode
+          000-0000
+        .buy_main-detail-address-city
+          東京都 渋谷区 神南坂 1-2-3
+        .buy_main-detail-address-name
+          高橋 花子
+    .buy_main-bottun
+      =form_with do |f|
+        =f.submit "購入する", class: "new1-btn"
+  .buy_footer
+    .buy_footer-links
+      .buy_footer-links-title
+        =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
+      .buy_footer-links-title
+        =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
+      .buy_footer-links-title
+        =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
+    .buy_footer-image
+      = link_to image_tag(src= "fmarket_logo_white.svg"),root_path
+    .buy_footer-end
+      © Mercari, Inc.
