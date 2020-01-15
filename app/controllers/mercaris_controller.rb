@@ -35,5 +35,7 @@ class MercarisController < ApplicationController
   def new1
   end
   
+  def buy
+  end
 
 end
