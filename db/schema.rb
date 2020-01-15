@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 2020_01_14_115540) do
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "brand_name"
-    t.bigint "item_id"
+    t.string "brands_name"
+    t.bigint "items_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_brands_on_item_id"
+    t.index ["items_id"], name: "index_brands_on_items_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -94,6 +94,12 @@ ActiveRecord::Schema.define(version: 2020_01_14_115540) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "x_categroys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "z_category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "y_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "y_category_name"
     t.bigint "x_category_id"
@@ -110,7 +116,6 @@ ActiveRecord::Schema.define(version: 2020_01_14_115540) do
     t.index ["y_category_id"], name: "index_z_categories_on_y_category_id"
   end
 
-  add_foreign_key "brands", "items"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"
   add_foreign_key "items", "x_categories"
