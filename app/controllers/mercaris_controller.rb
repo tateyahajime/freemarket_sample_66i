@@ -44,6 +44,6 @@ class MercarisController < ApplicationController
   def credit
   end
 
-  def credit2
+  def credit_touroku
   end
 end

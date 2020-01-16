@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :mercaris do
     collection do
      
-      get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :buy, :sidebar, :credit, :credit2
+      get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :buy, :sidebar, :credit, :credit_touroku
     end
   end
   resources :items
