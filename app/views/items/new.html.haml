@@ -9,16 +9,16 @@
         %div
           .sell__container__inner
             %h2.sell__head 商品の情報を入力
-            = form_with class: "sell__form" do |f|
+            = form_with model: @item, class: "sell__form" do |f|
               .sell--upload__box
                 %h3.sell--upload__head
                   出品画像
                   %span.form--require 必須
                 %p 最大10枚までアップロードできます
-                = f.fields_for :item_images do |fi|
-                  = fi.label :image, class: "sell--upload__drop__box" do
+                = f.fields_for :images do |i|
+                  = i.label :image1, class: "sell--upload__drop__box" do
                     .sell--upload__drop__box__imageview
-                      = fi.file_field :image,class:"file",style:"display:none;"
+                      = i.file_field :image1,class:"file",style:"display:none;"
                       %pre
                         #preview
                           ドラッグドラッグアンドドロップ
@@ -29,7 +29,7 @@
                     商品名
                     %span.form--require 必須
                   %div
-                    = f.text_field :name, class: "input__default", placeholder: "商品名（必須 40文字まで)"
+                    = f.text_field :item_name, class: "input__default", placeholder: "商品名（必須 40文字まで)"
                 .form__group
                   %label
                     商品の説明
@@ -44,17 +44,20 @@
                       %span.form--require 必須
                     %div
                       .select--wrap
-                        = f.select :x_category_id, [["レディース",1],["メンズ",2],["ベビー・キッズ",3],["インテリア・住まい・小物",4],["本・音楽・ゲーム",5],["おもちゃ・ホビー・グッズ",6],["コスメ・香水・美容",7],["家電・スマホ・カメラ",8],["スポーツ・レジャー",9],["ハンドメイド",10],["チケット",11],["自動車・オートバイ",12],["その他",13]],{prompt: '---'}
+                      = f.fields_for :x_categori do |i|
+                        = i.select :x_category_name, [["レディース",1],["メンズ",2],["ベビー・キッズ",3],["インテリア・住まい・小物",4],["本・音楽・ゲーム",5],["おもちゃ・ホビー・グッズ",6],["コスメ・香水・美容",7],["家電・スマホ・カメラ",8],["スポーツ・レジャー",9],["ハンドメイド",10],["チケット",11],["自動車・オートバイ",12],["その他",13]],{prompt: '---'}
                       .select--wrap
-                        = f.select :y_category_id, [["トップス",1],["ジャケット/アウター",2],["パンツ",3]], {prompt: '---'}
+                      = f.fields_for :y_categorys do |i|
+                        = i.select :y_category_name, [["トップス",1],["ジャケット/アウター",2],["パンツ",3]], {prompt: '---'}
                       .select--wrap
-                        = f.select :z_category_id, [["Tシャツ/カットソー(半袖/袖なし)",1],["Tシャツ/カットソー(7分/長袖)",2],["シャツ/ブラウス(半袖/袖なし)",3]] ,{prompt: '---'}
+                      = f.fields_for :z_category_names do |i|
+                        = i.select :z_category_name, [["Tシャツ/カットソー(半袖/袖なし)",1],["Tシャツ/カットソー(7分/長袖)",2],["シャツ/ブラウス(半袖/袖なし)",3]] ,{prompt: '---'}
                   
                   .form__group
                     %label
                       商品の状態
                       %span.form--require 必須
-                    = f.select :condition_id,[["新品、未使用",1],["未使用に近い",2],["目立った傷や汚れなし",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",6]], {prompt: '---'}, {class: "select__default"}
+                    = f.select :condition,[["新品、未使用",1],["未使用に近い",2],["目立った傷や汚れなし",3],["やや傷や汚れあり",4],["傷や汚れあり",5],["全体的に状態が悪い",6]], {prompt: '---'}, {class: "select__default"}
               .sell__content
                 %h3.sell--sub__head 配送について
                 = link_to '?', "/jp/help_center/article/68/",class: "form__question"
@@ -63,7 +66,7 @@
                     %label
                       配送料の負担
                       %span.form--require 必須
-                    = f.select :delivery_charge_id, [["送料込み(出品者負担)",1],["着払い(購入者負担)",2]], {prompt: '---'}, {class: "select__default"}
+                    -# = f.select :charges, [["送料込み(出品者負担)",1],["着払い(購入者負担)",2]], {prompt: '---'}, {class: "select__default"}
                   .form__group
                     %label
                       発送元の地域
@@ -73,7 +76,7 @@
                     %label
                       発送までの日数
                       %span.form--require 必須
-                    = f.select :delivery_date_id, [["1~2日で発送",1],["2~3日で発送",2],["4~7日で発送",3]], {prompt: '---'}, {class: "select__default"}
+                    -# = f.select :date, [["1~2日で発送",1],["2~3日で発送",2],["4~7日で発送",3]], {prompt: '---'}, {class: "select__default"}
               .sell__content
                 %h3.sell--sub__head 販売価格(300〜9,999,999)
                 = link_to '?', "/jp/help_center/article/68/", class: "form__question"
@@ -95,7 +98,7 @@
                     %li.clearfix.bold
                       .l-left 販売利益
                       .l-right#output2 -
-              = f.number_field :order_status_id, value: "1", type: "hidden"
+              -# = f.number_field :order_status_id, value: "1", type: "hidden"
               .sell__content.sell__btn__box
                 %div
                   %p
@@ -114,8 +117,9 @@
                     また、出品をもちまして
                     = link_to '加盟店規約', "/jp/seller_terms/"
                     に同意したことになります。
-                %button.btn__default.btn--red{type: "submit"}
-                  出品する
+                =f.submit "出品する", class: "btn--red"
+                  
+                  
                 = link_to 'もどる', root_path, class: "btn--gray"
 
           
