@@ -1,0 +1,144 @@
+.buy{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(245, 245, 245);
+  overflow: scroll;
+
+  &_header{
+    height: 128px;
+    align-items: center;
+    &-logo{
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+      margin: 0 auto;
+      padding-top: 45px;
+    }
+  }
+
+  &_main{
+    height: 800px;
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+
+    &-title{
+      height: 100px;
+      font-size: 22px;
+      line-height: 100px;
+      text-align: center;
+      border: 1px solid rgb(245, 245, 245);
+    }
+
+    &-content{
+      display: flex;
+      height: 145px;
+      border: 1px solid rgb(245, 245, 245);
+      align-items: center;
+      padding-left: 170px;
+      &-name{
+        font-size: 14px;
+        padding-left: 10px;
+        &-prace{
+          font-weight: 800;
+        }
+      }
+
+    }
+
+    &-detail{
+      width: 350px;
+      margin: 0 auto;
+
+      
+      &-pay{
+        font-size: 24px;
+        font-weight: 600;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #c0c0c0;
+        justify-content: space-between;
+        &-money{
+          padding-left: 10px;
+        }
+      }
+
+      &-credit{
+        height:   160px;
+        border-bottom: 1px solid #c0c0c0;
+        &-title{
+          font-size: 20px;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 5px;
+          font-weight: 500;
+          padding-top: 10px;
+        }
+        &-name{
+          padding-bottom: 3px;
+          padding-top: 10px;
+        }
+      }
+
+      &-address{
+        height: 160px;
+        border-bottom: 1px solid #c0c0c0;
+        &-title{
+          font-size: 20px;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 5px;
+          font-weight: 500;
+          padding-top: 10px;
+        }
+        &-zipcode{
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+
+  &_footer{
+    height: 300px;
+    width: 100vw;
+  
+    &-links {
+      display: flex;
+      width: 456px;
+      margin: 0 auto;
+      font-size: 12px;
+      &-title {
+        margin: 0 auto;
+        display: block;
+        margin-top: 40px;
+        a {
+          text-decoration: none;
+          color: #333;
+        }
+        a:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+    }
+    &-image {
+      width: 185px;
+      margin: 0 auto;
+      margin-top:40px;
+    }
+    &-end {
+      text-align: center;
+    }
+  }
+}
+
+
+
+.main_content_imagefot{
+  height: 80px;
+  width: 80px;
+}
+.buy_main-bottun{
+  padding-left: 130px;
+}
