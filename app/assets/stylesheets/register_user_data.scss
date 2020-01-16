@@ -1,0 +1,127 @@
+.main_register{
+  display: flex;
+  height: 1450px;
+  background-color: rgb(245, 245, 245);
+
+  &-data{
+    width: 700px;
+    height: 1300px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    &-title{
+      height: 50px;
+      width: 700px;
+      border-bottom: solid 2px rgb(245, 245, 245);
+      font-size: 24px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    &-ex{
+      font-size: 15px;
+      padding-left: 200px;
+      padding-top: 80px;
+    }
+
+    &-name{
+      padding-top: 20px;
+      display: flex;
+      padding-left: 60px;
+
+      &-hissu{
+        width: 40px;
+        height: 20px;
+        background: #ea352d;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+        margin-left: 10px;
+      }
+
+
+    }
+
+    &-name-kana{
+      display: flex;
+      padding-top: 20px;
+      padding-left: 60px;
+    }
+
+    &-birthday{
+      display: flex;
+      padding-top: 20px;
+      padding-left: 60px;
+
+      &-space{
+        padding-left: 100px;
+        padding-top: 10px;
+      }
+    }
+
+    &-zipcode{
+      display: flex;
+      padding-top: 30px;
+      padding-left: 60px;
+      &-ninni{
+        width: 40px;
+        height: 20px;
+        background: lightgray;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+        margin-left: 10px;
+      }
+    }
+
+    &-city{
+      display: flex;
+      padding-top: 20px;
+      padding-left: 60px;
+      &-space{
+        padding-left: 90px;
+        padding-top: 10px;
+      }
+    }
+
+    &-town{
+      display: flex;
+      padding-top: 20px;
+      padding-left: 60px;
+    }
+
+    &-street{
+      display: flex;
+      padding-top: 20px;
+      padding-left: 60px;
+    }
+
+    &-building{
+      display: flex;
+      padding-top: 20px;
+      padding-left: 60px;
+    }
+
+    &-button{
+      width: 700px;
+      margin-top: 50px;
+      padding-left: 100px;
+    }
+
+    &-about{
+      margin-top: 30px;
+      float: right;
+      margin-right: 40px;
+    }
+  }
+}
+
+
+.content-field-register{
+  margin-left: 80px;
+  margin-top: 5px;
+}
+
