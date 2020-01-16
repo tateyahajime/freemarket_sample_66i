@@ -48,4 +48,7 @@ class MercarisController < ApplicationController
 
   def credit_data
   end
+
+  def logout
+  end
 end
