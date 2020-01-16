@@ -1,0 +1,15 @@
+= render partial: "header"
+.main-logout
+  = render partial: "sidebar"
+  .main-logout-content
+    .main-logout-content-bottun
+      =form_with do |f|
+        =f.button "ログアウト", class: "logout_btn", onclick: "location.href='aaa'"
+  .main-logout__Exhibition
+    .main-logout__Exhibition-image
+      -# =link_to root_path, class: "main__Exhibition-link"
+      .main-logout__Exhibition-image-text
+        出品
+      .main-logout__Exhibition-image-logo
+        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),root_path
+= render partial: "footer"
