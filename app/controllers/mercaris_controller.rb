@@ -51,4 +51,7 @@ class MercarisController < ApplicationController
 
   def logout
   end
+
+  def register_user_data
+  end
 end

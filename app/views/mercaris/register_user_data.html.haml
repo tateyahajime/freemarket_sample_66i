@@ -1,0 +1,73 @@
+= render partial: "header"
+.main_register
+  = render partial: "sidebar"
+  .main_register-data
+    .main_register-data-title
+      本人情報の登録
+    .main_register-data-ex
+      お客さまの本人情報を入力してください。
+    .main_register-data-name
+      .main_register-data-name-title
+        お名前
+      .main_register-data-name-hissu
+        必須
+    .main_register-data-name-space
+      =form_with do |f|
+        =f.text_field :name, placeholder: "例)山田", size: "60", class: "content-field-register"
+        =f.text_field :name, placeholder: "例)綾", size: "60", class: "content-field-register"
+        .main_register-data-name-kana
+          .main_register-data-name-kana-title
+            お名前カナ
+          .main_register-data-name-hissu
+            必須
+        .main_register-data-name-kana-space
+      =form_with do |f|
+        =f.text_field :name, placeholder: "例)ヤマダ", size: "60", class: "content-field-register"
+        =f.text_field :name, placeholder: "例)アヤ", size: "60", class: "content-field-register"
+        .main_register-data-birthday
+          .main_register-data-birthday-title
+            生年月日
+          .main_register-data-name-hissu
+            必須
+        .main_register-data-birthday-space
+          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'birthday_form', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        .main_register-data-zipcode
+          .main_register-data-zipcode-title
+            郵便番号
+          .main_register-data-zipcode-ninni
+            任意
+        .main_register-data-zipcode-space
+        =f.text_field :name, placeholder: "例) 1234567", size: "60", class: "content-field-register"
+        .main_register-data-city
+          .main_register-data-city-title
+            都道府県
+          .main_register-data-zipcode-ninni
+            任意
+        .main_register-data-city-space
+          =f.select :prefectures, [ ["北海道",1], ["青森", 2], ["岩手", 3 ] ,["宮城", 4], ["秋田", 5], ["山形", 6],["福島",7], ["茨城", 8], ["栃木", 9 ] ,["群馬", 10], ["埼玉", 11], ["千葉", 12], ["東京", 13], ["神奈川", 14], ["新潟", 15] ,["富山", 16], ["石川", 17], ["福井", 18],["山梨", 19], ["長野", 20], ["岐阜", 21] ,["静岡", 22], ["愛知", 23], ["三重", 24], ["滋賀", 25], ["京都", 26], ["大阪", 27] ,["兵庫", 28], ["奈良", 29], ["和歌山", 30],["鳥取", 31], ["島根", 32], ["岡山", 33] ,["広島", 34], ["山口", 35], ["徳島", 36], ["香川", 37], ["愛媛", 38], ["高知", 39] ,["福岡", 40], ["滋賀", 41], ["長崎", 42], ["熊本", 43], ["大分", 44] ,["宮崎", 45], ["鹿児島", 46], ["沖縄", 47] ],{}, { class: "new3__form-box-form-pre" }
+        .main_register-data-town
+          .main_register-data-town-title
+            市区町村
+          .main_register-data-zipcode-ninni
+            任意
+        .main_register-data-city-space
+        =f.text_field :name, placeholder: "例) 横浜市緑区", size: "60", class: "content-field-register"
+        .main_register-data-street
+          .main_register-data-street-title
+            番地
+          .main_register-data-zipcode-ninni
+            任意
+        .main_register-data-street-space
+        =f.text_field :name, placeholder: "例) 青山1-1-1", size: "60", class: "content-field-register"
+        .main_register-data-building
+          .main_register-data-building-title
+            建物名
+          .main_register-data-zipcode-ninni
+            任意
+        .main_register-data-building-space
+        =f.text_field :name, placeholder: "例) 柳ビル103", size: "60", class: "content-field-register"
+        .main_register-data-button
+          =f.submit "登録する", class: "new1-btn"
+        .main_register-data-about
+          =link_to "本人情報登録について","https://www.mercari.com/jp/help_center/article/423/"
+= render partial: "footer"
