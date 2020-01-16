@@ -1,0 +1,24 @@
+= render :partial => "header"
+.main00
+  = render :partial => "sidebar"
+  .main00-credit
+    .main00-credit-title
+      支払い方法
+    .main00-credit-content
+      .main00-credit-content-1
+        クレジットカード一覧
+      .main00-credit-content-bottun
+        =form_with do |f|
+          =f.button "クレジットカードを追加する", class: "credit_btn", onclick: "location.href='credit2'"
+    .main00-credit-link
+      =link_to "支払い方法について","https://www.mercari.com/jp/help_center/category/6/"
+  .main00__Exhibition
+    .main00__Exhibition-image
+      -# =link_to root_path, class: "main__Exhibition-link"
+      .main00__Exhibition-image-text
+        出品
+      .main00__Exhibition-image-logo
+        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),root_path
+
+.space
+= render :partial => "footer"

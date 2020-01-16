@@ -38,4 +38,12 @@ class MercarisController < ApplicationController
   def buy
   end
 
+  def sidebar
+  end
+
+  def credit
+  end
+
+  def credit2
+  end
 end

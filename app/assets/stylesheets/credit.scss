@@ -1,0 +1,90 @@
+.space{
+  height: 40px;
+  background-color: rgb(245, 245, 245);
+}
+.main00{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(245, 245, 245);
+
+  &__Exhibition {
+    display: flex;
+    &-image {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 150px;
+      float: right;
+      position: fixed;
+      z-index: 1;
+      bottom: 25px;
+      right: 25px;
+
+      &-text {
+        text-align: center;
+        color: #ffffff;
+        font-size: 22px;
+        padding-top: 40px;
+      }
+      &-logo {
+        &-camera {
+          font-size: 75px;
+          margin-left: 62px;
+          margin-top: 20px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+  
+
+
+.main00-credit{
+  height: 400px;
+  width: 800px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  &-title{
+    height: 50px;
+    font-size: 24px;
+    border-bottom: solid 2px rgb(245, 245, 245);
+    line-height: 50px;
+    text-align: center;
+  }
+
+  &-content{
+    height: 200px;
+    width: 600px;
+    border-bottom: solid 2px rgb(245, 245, 245);
+    margin: 0 auto;
+    &-1{
+      padding-top: 50px;
+      margin-left: 80px;
+      font-size: 20px;
+    }
+  }
+
+  &-link{
+    float: right;
+    margin-right: 40px;
+    margin-top: 30px;
+  }
+}
+
+
+
+
+.credit_btn{
+  height: 50px;
+  width: 320px;
+  background-color: #ea352d;
+  color: white;
+  font-size: 16px;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
