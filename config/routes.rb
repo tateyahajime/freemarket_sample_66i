@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
      
       get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :buy, :sidebar, :credit, :credit2
+
     end
   end
   resources :items

@@ -1,3 +1,5 @@
+= render "header"
+
 .main
   .main__image 
     = image_tag(src= "top.jpg",class: "main__image-1")
@@ -178,6 +180,8 @@
       .main__Exhibition-image-text
         出品
       .main__Exhibition-image-logo
-        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),root_path
+        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path
+
+= render "footer"
 
       

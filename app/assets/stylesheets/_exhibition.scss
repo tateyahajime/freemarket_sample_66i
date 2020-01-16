@@ -295,9 +295,13 @@ label {
 }
 
 .btn--red {
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
+    width: 100%;
+    background-color:#ea352d;
+    cursor: pointer;
+    border: 1px solid #ea352d;
+    padding: 10px 0;
+    margin: 30px 0 10px 0;
+    color: #ffffff;
 }
 .btn--gray {
   background: #aaa;
@@ -335,7 +339,6 @@ label {
   height: 14px;
   border-radius: 50%;
   background: #0099e8;
-;
   color: #fff;
   line-height: 14px;
   font-size: 12px;
