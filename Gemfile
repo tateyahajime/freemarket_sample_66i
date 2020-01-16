@@ -80,3 +80,4 @@ gem 'active_hash'
  gem 'fog-aws'
  gem 'carrierwave'
  gem 'mini_magick'
+ gem "pry-rails"
