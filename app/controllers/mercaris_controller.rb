@@ -16,13 +16,13 @@ class MercarisController < ApplicationController
   def show
   end
 
-  def new2_phone
+  def new2
   end
 
-  def new3_address
+  def new3
   end
 
-  def new5_last
+  def new5
   end
 
   def exhibition
@@ -31,10 +31,10 @@ class MercarisController < ApplicationController
   def out
   end
 
-  def new4_credit
+  def new4
   end
 
-  def new1_data
+  def new1
   end
   
   def buy
