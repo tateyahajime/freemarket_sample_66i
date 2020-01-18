@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
   def index
-    @item = Item.includes(:images).order('created_at DESC')
-    @items = Item.all
+    # @items = Item.all
+    @images = Image.all
+    @item = Item.includes(:images).order('created_at ASC')
   end
 
   def new
@@ -18,6 +19,10 @@ class ItemsController < ApplicationController
     else
       redirect_to new_item_path
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   def update

@@ -1,0 +1,196 @@
+= render "header"
+
+.main
+  .main__image 
+    = image_tag(src= "top.jpg",class: "main__image-1")
+    .main__image-text
+      スマホでかんたん
+    .main__image-text1
+      フリマアプリ
+    .main__image-text2
+      メルカリはスマホカメラからすぐに出品できる
+    .main__image-text3
+      購入時も安心は独自システムのアプリです
+    .main__image-image1
+      = link_to image_tag(src="app.svg", class: "main__image-image1"),"https://apps.apple.com/jp/app/id667861049?l=ja"
+    .main__image-image2
+      = link_to image_tag(src="play.svg", class: "main__image-image2"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+  .main__title1
+    .main__title1-title
+      人気カテゴリー
+    %p.main__title1-list
+      レディース
+    %p.main__title1-list
+      メンズ
+    %p.main__title1-list
+      家電・スマホ・カメラ
+    %p.main__title1-list
+      おもちゃ・ホビー・グッズ
+  .main__categories
+    .main__categories-box
+      .main__categories-box-list1
+        .main__categories-box-list1-title
+          商品一覧表示
+        .main__categories-box-list1-link
+          = link_to "もっと見る >",root_path
+      .main__categories-box-area
+        - @item.each do |item|
+          =link_to "/items/#{item.id}", method: :get do
+            .main__categories-box-area-image
+              .main__categories-box-area-image-area
+                .main__categories-box-area-image-area-image
+                  = image_tag (item.images.first.image1.url)
+                      
+                  .main__categories-box-area-image-area-price
+                    ¥
+                    = item.price
+                  .main__categories-box-area-image-catch
+                    = item.description
+        -# .main__categories-box-area-image
+        -#   .main__categories-box-area-image-area
+        -#     = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+        -#     .main__categories-box-area-image-area-price
+        -#       ¥5,000
+        -#   .main__categories-box-area-image-catch
+        -#     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaああああああああああああああああああああ
+        -# .main__categories-box-area-image
+        -#   .main__categories-box-area-image-area
+        -#     = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+        -#     .main__categories-box-area-image-area-price
+        -#       ¥5,000
+        -#   .main__categories-box-area-image-catch
+        -#     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaああああああああああああああああああああ
+        -# .main__categories-box-area-image
+        -#   .main__categories-box-area-image-area
+        -#     = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+        -#     .main__categories-box-area-image-area-price
+        -#       ¥5,000
+        -#   .main__categories-box-area-image-catch
+        -#     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaああああああああああああああああああああ
+        -# .main__categories-box-area-image
+        -#   .main__categories-box-area-image-area
+        -#     = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+        -#     .main__categories-box-area-image-area-price
+        -#       ¥5,000
+        -#   .main__categories-box-area-image-catch
+        -#     aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaああああああああああああああああああああ
+        -# .main__categories-box-area-image
+        -#   .main__categories-box-area-image-area
+        -#     = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+        -#     .main__categories-box-area-image-area-price
+        -#       ¥5,000
+        -#   .main__categories-box-area-image-catch
+      
+      
+      
+      
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         メンズ一新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         家電・スマホ・カメラ新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  -#           いいですよ！！
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         おもちゃ・ホビー・グッズ新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  -# .main__title1
+  -#   .main__title1-title
+  -#     人気ブランド
+  -#   %p.main__title1-list
+  -#     シャネル
+  -#   %p.main__title1-list
+  -#     ルイヴィトン
+  -#   %p.main__title1-list
+  -#     シュプリーム
+  -#   %p.main__title1-list
+  -#     ナイキ
+  -# .main__categories
+  -#   .main__categories-box
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         レディース一新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         メンズ一新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         家電・スマホ・カメラ新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  -#           いいですよ
+  -#     .main__categories-box-list1
+  -#       .main__categories-box-list1-title
+  -#         おもちゃ・ホビー・グッズ新着アイテム
+  -#       .main__categories-box-list1-link
+  -#         = link_to "もっと見る>",root_path
+  -#     .main__categories-box-area
+  -#       .main__categories-box-area-image
+  -#         .main__categories-box-area-image-area
+  -#           = link_to image_tag(src= "himawari.jpg",class: "main__categories-box-area-image-area-image"),root_path
+  -#           .main__categories-box-area-image-area-price
+  -#             ¥5,000
+  -#         .main__categories-box-area-image-catch
+  .main__Exhibition
+    .main__Exhibition-image
+      -# =link_to root_path, class: "main__Exhibition-link"
+      .main__Exhibition-image-text
+        出品
+      .main__Exhibition-image-logo
+        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path
+
+= render "footer"
+
+      
