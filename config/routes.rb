@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'mercaris#index'
+  root to: 'items#index'
   # root to: 'mercari#new'
   # get 'mercaris', to: 'mercaris#form'
   resources :mercaris do
@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       
     end
   end
-  resources :items
+  resources :items 
+  
 end
