@@ -31,6 +31,8 @@ class MercarisController < ApplicationController
   def out
   end
 
+  def new4
+  end
 
   def new1
   end
@@ -38,4 +40,18 @@ class MercarisController < ApplicationController
   def buy
   end
 
+  def sidebar
+  end
+
+  def credit
+  end
+
+  def credit_data
+  end
+
+  def logout
+  end
+
+  def register_user_data
+  end
 end

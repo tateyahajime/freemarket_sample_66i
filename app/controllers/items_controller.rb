@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
 
   def index
+
     @item = Item.includes(:images,:shippings).order('created_at ASC')
     @items = Item.all
     # @parents = Category.all.order("id ASC").limit(13)
     @parents = Category.all
+
   end
 
   def new
@@ -38,11 +40,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def update
   end
 
   def destroy
   end
+
 
   private
 
@@ -53,3 +60,4 @@ class ItemsController < ApplicationController
     # params.require(:item).permit(:image, :item_name, :description, :condition, :charges, :date, :price, :order_status_id).merge(user_id: params[:user_id], x_category_id: params[:x_category_id], y_category_id: params[:y_category_id], z_category_id: params[:z_category_id])
   end
 end
+

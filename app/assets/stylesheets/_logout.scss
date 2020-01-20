@@ -1,0 +1,54 @@
+.main-logout{
+  height: 1000px;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+
+  &-content{
+    height: 180px;
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+
+  &__Exhibition {
+    display: flex;
+    &-image {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 150px;
+      float: right;
+      position: fixed;
+      z-index: 1;
+      bottom: 25px;
+      right: 25px;
+
+      &-text {
+        text-align: center;
+        color: #ffffff;
+        font-size: 22px;
+        padding-top: 40px;
+      }
+      &-logo {
+        &-camera {
+          font-size: 75px;
+          margin-left: 62px;
+          margin-top: 20px;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+
+.logout_btn{
+  height: 50px;
+  width: 320px;
+  background-color: #ea352d;
+  color: white;
+  font-size: 16px;
+  margin-left: 180px;
+  margin-top: 60px;
+}
