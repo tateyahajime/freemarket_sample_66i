@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   # get 'mercaris', to: 'mercaris#form'
   resources :mercaris do
     collection do
-      get :form1, :new1, :new2, :new4, :new3, :new5, :out, :buy
-
+      get :form1, :new1, :new2, :new4, :new3, :new5, :buy
+    
     end
   end
-  resources :items
+  resources :items do
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
+  end
+   
 end

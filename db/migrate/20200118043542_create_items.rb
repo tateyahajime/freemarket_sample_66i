@@ -5,11 +5,12 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :item_name
       t.string :price
       t.string :brand
-      t.float :size
+      t.string :size
       t.string :condition
-      t.references :x_category, foreign_key: true
-      t.references :y_category, foreign_key: true
-      t.references :z_category, foreign_key: true
+      t.string :charges
+      t.string :date
+      t.string :prefectures
+      t.references :category, foreign_key: true
       t.text :description
       t.references :user, foreign_key: true
       t.timestamps
