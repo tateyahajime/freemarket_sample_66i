@@ -81,3 +81,4 @@ gem 'active_hash'
  gem 'carrierwave'
  gem 'mini_magick'
  gem "pry-rails"
+ gem 'payjp'
