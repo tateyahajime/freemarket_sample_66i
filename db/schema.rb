@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_123741) do
+ActiveRecord::Schema.define(version: 2020_01_18_051457) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -19,25 +19,16 @@ ActiveRecord::Schema.define(version: 2020_01_14_123741) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "brands_name"
-    t.bigint "items_id"
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["items_id"], name: "index_brands_on_items_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image1"
-    t.string "image2"
-    t.string "image3"
-    t.string "image4"
-    t.string "image5"
-    t.string "image6"
-    t.string "image7"
-    t.string "image8"
-    t.string "image9"
-    t.string "image10"
+    t.string "image"
     t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,19 +39,18 @@ ActiveRecord::Schema.define(version: 2020_01_14_123741) do
     t.string "item_name"
     t.string "price"
     t.string "brand"
-    t.float "size"
+    t.string "size"
     t.string "condition"
-    t.bigint "x_category_id"
-    t.bigint "y_category_id"
-    t.bigint "z_category_id"
+    t.string "charges"
+    t.string "date"
+    t.string "prefectures"
+    t.bigint "category_id"
     t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-    t.index ["x_category_id"], name: "index_items_on_x_category_id"
-    t.index ["y_category_id"], name: "index_items_on_y_category_id"
-    t.index ["z_category_id"], name: "index_items_on_z_category_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -83,7 +73,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_123741) do
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "charges"
+    t.integer "shipping_attributes"
     t.string "first_name"
     t.string "last_name"
     t.string "kana_first_name"
@@ -95,10 +85,11 @@ ActiveRecord::Schema.define(version: 2020_01_14_123741) do
     t.string "building_name"
     t.integer "phone"
     t.string "area"
-    t.date "date"
     t.bigint "user_id"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_shippings_on_item_id"
     t.index ["user_id"], name: "index_shippings_on_user_id"
   end
 
@@ -127,42 +118,11 @@ ActiveRecord::Schema.define(version: 2020_01_14_123741) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "x_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "x_category_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "x_categroys", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "z_category_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "y_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "y_category_name"
-    t.bigint "x_category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["x_category_id"], name: "index_y_categories_on_x_category_id"
-  end
-
-  create_table "z_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "z_category_name"
-    t.bigint "y_category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["y_category_id"], name: "index_z_categories_on_y_category_id"
-  end
-
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
-  add_foreign_key "items", "x_categories"
-  add_foreign_key "items", "y_categories"
-  add_foreign_key "items", "z_categories"
   add_foreign_key "messages", "users"
   add_foreign_key "pays", "users"
+  add_foreign_key "shippings", "items"
   add_foreign_key "shippings", "users"
-  add_foreign_key "y_categories", "x_categories"
-  add_foreign_key "z_categories", "y_categories"
 end

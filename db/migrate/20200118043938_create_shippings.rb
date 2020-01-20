@@ -2,7 +2,7 @@ class CreateShippings < ActiveRecord::Migration[5.2]
   def change
     create_table :shippings do |t|
 
-      t.integer :charges
+      t.integer :shipping_attributes
       t.string :first_name
       t.string :last_name
       t.string :kana_first_name
@@ -14,9 +14,9 @@ class CreateShippings < ActiveRecord::Migration[5.2]
       t.string :building_name
       t.integer :phone
       t.string :area
-      t.date :date
+      
       t.references :user, foreign_key: true
-
+      t.references :item, foreign_key: true
       t.timestamps
     end
   end

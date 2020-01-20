@@ -1,21 +1,41 @@
 class ItemsController < ApplicationController
 
   def index
-    @images = Image.all
-    @item = Item.includes(:images).order('created_at ASC')
+
+    @item = Item.includes(:images,:shippings).order('created_at ASC')
+    @items = Item.all
+    # @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.all
+
   end
 
   def new
     @item = Item.new
     @item.images.new
-
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      # @category_parent_array << parent.name
+      @category_parent_array << parent
+    end
   end
+
+
+  def get_category_children
+    # binding.pry
+    @category_children = Category.find_by("#{params[:parent]}", ancestry: nil).children
+ end
+
+ def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+ end
 
   def create
     @item = Item.new(item_params)
     if @item.save!
+      flash[:notice] = "出品が完了しました"
       redirect_to root_path
     else
+      flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
       redirect_to new_item_path
     end
   end
@@ -34,14 +54,10 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    # params.require(:image).permit(:image1, images_attributes: [:image1])
-    # params.require(:image).permit(:image1, images_attributes: [:image1])
-    # params.require(:shipping).permit(:charges)
-    # params.require(:item).permit(:image, :item_name, :description, :x_category_id, :y_category_id, :z_category_id, :condition, :charges, :date, :price, :order_status_id, :x_category_name, :y_category_name, :z_category_name, images_attributes: [:image1], x_categorys_attributes: [:x_category_name], y_categorys_attributes: [:y_category_name], z_categorys_attributes: [:z_category_name])
-    # end
-    params.require(:item).permit(:image1, :item_name, :description, :condition, :charges, :date, :price, :order_status_id, images_attributes: [:image1]).merge(user_id: 1, x_category_id: 1, y_category_id: 1, z_category_id: 1)
+   
+    # params.require(:item).permit(:image, :item_name, :description, :condition, :charges, :date, :price, :order_status_id, images_attributes: [:image1],).merge(user_id: 1, x_category_id: 1, y_category_id: 1, z_category_id: 1)
+    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
     # params.require(:item).permit(:image, :item_name, :description, :condition, :charges, :date, :price, :order_status_id).merge(user_id: params[:user_id], x_category_id: params[:x_category_id], y_category_id: params[:y_category_id], z_category_id: params[:z_category_id])
-  
   end
 end
 
