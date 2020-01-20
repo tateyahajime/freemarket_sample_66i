@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to :x_category, optional: true
   belongs_to :y_category, optional: true
   belongs_to :z_category, optional: true
+  # belongs_to :brand
   
   has_many :images
   has_many :shippings
