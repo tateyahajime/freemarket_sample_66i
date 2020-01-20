@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     
     
     end
+  end
   resources :items do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
