@@ -86,7 +86,7 @@
 
     .show__product-btn4
      
-      =link_to "この商品を削除する", root_path
+      =link_to "この商品を削除する", item_path(@item.id),method: :delete
 
     .show__product-text
       .show__product-text-1
