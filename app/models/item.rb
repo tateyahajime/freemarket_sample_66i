@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+
   belongs_to :category, optional: true
  
   # accepts_nested_attributes_for :category, allow_destroy: true

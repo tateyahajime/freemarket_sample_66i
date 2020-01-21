@@ -1,14 +1,12 @@
+= render "header"
 .show
   .show__header
   .show__product
     .show__product-title
-      コーチ★新品未使用保管品★シグネチャーチェックの2way斜めがけショルダーバッグ
-    %p.show__product-paragraph
-      『コーチ★新品未使用保管品★シグネチャーチェックの2way斜めがけショルダーバッグ』は、866回の取引実績を持つわこさんから出品されました。コーチ（ショルダーバッグ/レディース）の商品で、埼玉県から1~2日で発送されます。
+      = @item.item_name
     .show__product-box
-
       .show__product-box-area1
-        = image_tag(src= "bag.jpg",class: "show__product-box-area-image-1")
+        = image_tag (@item.images.first.image.url class: "show__product-box-area-image-1")
         .show__product-box-area-image
          
       .show__product-box-area2
@@ -32,43 +30,44 @@
         .show__product-box-area2-exhibition2
           .show__product-box-area2-exhibition2-box1
             .show__product-box-area2-exhibition2-box1-name
-              =link_to "name",root_path
+              = link_to @item.user.nickname, root_path
             .show__product-box-area2-exhibition2-box1-name1 
               .show__product-box-area2-exhibition2-box1-name1-smile1
                 =icon('fas', 'grin', class: "show__product-box-area2-exhibition2-box1-name1-smile1-1")
                 865
-            
               .show__product-box-area2-exhibition2-box1-name1-smile2
                 =icon('fas', 'meh', class: "show__product-box-area2-exhibition2-box1-name1-smile2-1")
                 2
-              
               .show__product-box-area2-exhibition2-box1-name1-smile3
                 =icon('fas', 'tired', class: "show__product-box-area2-exhibition2-box1-name1-smile3-1")
                 0
               
           .show__product-box-area2-exhibition2-box2
-            パンくず
+            レディース
+            %br > バッグ
+            > ショルダーバック
+
           .show__product-box-area2-exhibition2-box3
-            =link_to "コーチ",root_path
+            = link_to @item.brand, root_path
           .show__product-box-area2-exhibition2-box3
-            未使用に近い
+            = @item.condition
+            -# 未使用に近い
           .show__product-box-area2-exhibition2-box3
+            -# = @item.charges
             送料込み(出品者負担)
           .show__product-box-area2-exhibition2-box3
+            -# = @item.shipping
             らくらくメルカリ便
           .show__product-box-area2-exhibition2-box3
-            =link_to "埼玉県",root_path
+            -# = link_to @item.prefectures, root_path
+            = link_to "埼玉県",root_path
           .show__product-box-area2-exhibition2-box3
+            -# = @item.date 
             1~2日で発送
-          
-          
-
-      
-      
-      
     .show__product-price
       %span.show__product-price-1
-        ¥7,800
+        ¥
+        = @item.price
       %span.show__product-price-2
         (税込)
       %span.show__product-price-3
@@ -79,12 +78,7 @@
 
     .show__product-text
       .show__product-text-1
-        コーチの大きめの斜めがけがけショルダーバッグです。短いハンドルもついているので、肩掛けのセミショルダーにもなります(*^^*)
-        ナイロン素材でお手入れも楽で、色違いの黒チェックを愛用しており、こちらは使用機会がないため出品します。
-        未使用ですが保管品のため、短いショルダーにクセがついています。気になる方はご遠慮くださいm(_ _)m
-        コーチが大好きでほかにも出品しています★
-        おまとめ割引させていただきます。
-        あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        = @item.description
     .show__product-iine
       %span.show__product-iine-1
         ♡ いいね！ 12
@@ -102,9 +96,9 @@
 
   .show__links1
     .show__links1-1
-      =link_to "<格安 プレステ ソフト まとめて 7本", root_path
+      =link_to "< 格安 プレステ ソフト まとめて 7本", root_path
     .show__links1-1
-      =link_to "エアハラチ キッズ>",root_path
+      =link_to "エアハラチ キッズ >",root_path
   .show__links2
     .show__links2-facebook
       =link_to "https://www.facebook.com/" do
@@ -117,84 +111,71 @@
         =icon('fab', 'pinterest-square', class: "show__links2-pinterest-1")
 
   .show__title
-    =link_to "nameさんその他の商品", root_path
+    =link_to @item.user.nickname + "さんのその他の商品", root_path
   .show__other
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= "himawari.jpg",class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
-        .show__other-area-text-information
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        
+        .show__other-area-text-information 
+          = @item.description
         .show__other-area-text-area
           .show__other-area-text-area-price
-            ¥3,400
+            ¥ 
+            = @item.price
           .show__other-area-text-area-iine
             ♡ 11
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= "himawari.jpg",class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        
+          = @item.description
         .show__other-area-text-area
           .show__other-area-text-area-price
-            ¥3,400
+            ¥ 
+            = @item.price
           .show__other-area-text-area-iine
             ♡ 11
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= "himawari.jpg",class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        
+          = @item.description
         .show__other-area-text-area
           .show__other-area-text-area-price
-            ¥3,400
+            ¥ 
+            = @item.price
           .show__other-area-text-area-iine
             ♡ 11
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= "himawari.jpg",class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        
+          = @item.description
         .show__other-area-text-area
           .show__other-area-text-area-price
-            ¥3,400
+            ¥ 
+            = @item.price
           .show__other-area-text-area-iine
             ♡ 11
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= "himawari.jpg",class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        
+          = @item.description
         .show__other-area-text-area
           .show__other-area-text-area-price
-            ¥3,400
+            ¥ 
+            = @item.price
           .show__other-area-text-area-iine
             ♡ 11
 
-  .show__title
-    =link_to "コーチのショルダーバッグ その他の商品",root_path
-  .show__other
-    .show__other-area
-      .show__other-area-image
-        = link_to image_tag(src= "himawari.jpg",class: "show__product-box-area-image-1"),root_path
-      .show__other-area-text
-        .show__other-area-text-information
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
-        .show__other-area-text-area
-          .show__other-area-text-area-price
-            ¥3,400
-          .show__other-area-text-area-iine
-            ♡ 11
+= render "footer"
