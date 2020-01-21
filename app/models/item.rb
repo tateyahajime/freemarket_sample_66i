@@ -18,7 +18,7 @@ class Item < ApplicationRecord
 
   
 
-  has_many :images
+  has_many :images, dependent: :destroy
   has_many :shippings
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :shippings, allow_destroy: true

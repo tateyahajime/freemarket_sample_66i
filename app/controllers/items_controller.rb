@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
 
+  before_action :set_action, only: [:show, :destroy]
+  
+
   def index
     @item = Item.includes(:images,:shippings).order('created_at ASC')
     @items = Item.all
@@ -40,13 +43,18 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+  
   end
 
   def update
   end
 
   def destroy
+    if @item.destroy
+      redirect_to root_path, notice: "削除が完了しました"
+    else
+      redirect_to item_path(@item.id), alert: "削除が失敗しました"
+    end
   end
 
 
@@ -54,6 +62,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
+  end
+
+  def set_action
+    @item = Item.find(params[:id])
   end
 end
 
