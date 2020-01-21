@@ -42,6 +42,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @prefecture = Prefecture.find(@item.prefectures)
   end
 
   def update
