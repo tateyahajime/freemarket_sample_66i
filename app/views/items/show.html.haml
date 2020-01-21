@@ -6,7 +6,7 @@
       = @item.item_name
     .show__product-box
       .show__product-box-area1
-        = image_tag (@item.images.first.image1.url class: "show__product-box-area-image-1")
+        = image_tag (@item.images.first.image.url class: "show__product-box-area-image-1")
         .show__product-box-area-image
          
       .show__product-box-area2
@@ -115,7 +115,7 @@
   .show__other
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= @item.images.first.image1.url, class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information 
           = @item.description
@@ -128,7 +128,7 @@
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= @item.images.first.image1.url, class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
           = @item.description
@@ -141,7 +141,7 @@
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= @item.images.first.image1.url, class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
           = @item.description
@@ -154,7 +154,7 @@
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= @item.images.first.image1.url, class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
           = @item.description
@@ -167,7 +167,7 @@
    
     .show__other-area
       .show__other-area-image
-        = link_to image_tag(src= @item.images.first.image1.url, class: "show__product-box-area-image-1"),root_path
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-1"),root_path
       .show__other-area-text
         .show__other-area-text-information
           = @item.description
