@@ -40,6 +40,7 @@
               .main__categories-box-area-image-area
                 .main__categories-box-area-image-area-image
                   = image_tag(item.images.first.image.url)
+
                       
                   .main__categories-box-area-image-area-price
                     ¥
@@ -193,7 +194,7 @@
       .main__Exhibition-image-text
         出品
       .main__Exhibition-image-logo
-        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path
+        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
 
 = render "footer"
 
