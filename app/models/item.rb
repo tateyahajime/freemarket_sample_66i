@@ -5,8 +5,21 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
  
   # accepts_nested_attributes_for :category, allow_destroy: true
+  validates_associated :images
+  validates :images, presence: true
+  validates :item_name, presence: true
+  validates :price, presence: true
+  validates :size, presence: true
+  validates :condition, presence: true
+  validates :charges, presence: true
+  validates :prefectures, presence: true
+  validates :category_id, presence: true
+  validates :date, presence: true
+  validates :description, presence: true
+
   
-  has_many :images
+
+  has_many :images, dependent: :destroy
   has_many :shippings
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :shippings, allow_destroy: true
@@ -17,7 +30,5 @@ class Item < ApplicationRecord
   enum condition: {"新品、未使用": 1,"未使用に近い": 2,"目立った傷や汚れなし": 3, "やや傷や汚れあり": 4,"傷や汚れあり": 5, "全体的に状態が悪い": 6}
   enum size: {"XXS以下": 1,"XS(SS)": 2,"S": 3,"M": 4,"L": 5,"XL(LL)": 6,"2XL(3L)": 7,"3XL(4L)": 8,"4XL(5L)以上": 9, "FREE SIZE": 10}
 
-  # enum x_category: {"レディース": 1,"メンズ": 2,"ベビー・キッズ": 3,"インテリア・住まい・小物": 4,"本・音楽・ゲーム": 5,"おもちゃ・ホビー・グッズ": 6,"コスメ・香水・美容": 7,"家電・スマホ・カメラ": 8,"スポーツ・レジャー": 9,"ハンドメイド": 10, "チケット": 11, "自動車・オートバイ": 12, "その他": 13}
-  # enum y_category: {"トップス": 1,"ジャケット/アウター": 2, "パンツ": 3}
-  # enum z_category: {"Tシャツ/カットソー(半袖/袖なし)": 1, "Tシャツ/カットソー(7分/長袖)": 2, "シャツ/ブラウス(半袖/袖なし)": 3}
+ 
 end

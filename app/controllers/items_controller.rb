@@ -1,11 +1,13 @@
 class ItemsController < ApplicationController
 
-  def index
+  before_action :set_action, only: [:show, :destroy]
+  
 
+  def index
     @item = Item.includes(:images,:shippings).order('created_at ASC')
     @items = Item.all
     # @parents = Category.all.order("id ASC").limit(13)
-    @parents = Category.all
+   
 
   end
 
@@ -14,14 +16,12 @@ class ItemsController < ApplicationController
     @item.images.new
     @category_parent_array = []
     Category.where(ancestry: nil).each do |parent|
-      # @category_parent_array << parent.name
       @category_parent_array << parent
     end
   end
 
 
   def get_category_children
-    # binding.pry
     @category_children = Category.find_by("#{params[:parent]}", ancestry: nil).children
  end
 
@@ -31,34 +31,43 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save!
+    if @item.save
       flash[:notice] = "出品が完了しました"
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      redirect_to new_item_path
+      # redirect_to new_item_path,data: {"turbolinks" => false}
+      render "new"
+      
     end
   end
 
   def show
     @item = Item.find(params[:id])
     @prefecture = Prefecture.find(@item.prefectures)
+
   end
 
   def update
   end
 
   def destroy
+    if @item.destroy
+      redirect_to root_path, notice: "削除が完了しました"
+    else
+      redirect_to item_path(@item.id), alert: "削除が失敗しました"
+    end
   end
 
 
   private
 
   def item_params
-   
-    # params.require(:item).permit(:image, :item_name, :description, :condition, :charges, :date, :price, :order_status_id, images_attributes: [:image1],).merge(user_id: 1, x_category_id: 1, y_category_id: 1, z_category_id: 1)
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
-    # params.require(:item).permit(:image, :item_name, :description, :condition, :charges, :date, :price, :order_status_id).merge(user_id: params[:user_id], x_category_id: params[:x_category_id], y_category_id: params[:y_category_id], z_category_id: params[:z_category_id])
+  end
+
+  def set_action
+    @item = Item.find(params[:id])
   end
 end
 
