@@ -228,6 +228,20 @@ label {
   position: relative;
   background: #fff;
 }
+.select--wrap1 {
+  position: relative;
+  background: #fff;
+  width: 400px;
+}
+#item_size {
+  height: 48px;
+}
+#item_brand {
+  position: relative;
+  background: #fff;
+  width: 400px;
+  height: 48px;
+}
 .select__default {
   position: relative;
   z-index: 2;
@@ -241,6 +255,7 @@ label {
   cursor: pointer;
   margin-top: 5px;
 }
+
 
 .sell_price {
   & li:first-child {
