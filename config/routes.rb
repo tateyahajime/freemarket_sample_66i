@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'items#index'
   # root to: 'mercari#new'
   # get 'mercaris', to: 'mercaris#form'
+  get 'items/:id/buy_view' => 'items#buy_view'
+  post '/items/:id/pay' => 'items#pay'
+  get '/items/:id/pay' => 'items#pay'
   resources :mercaris do
     collection do
 
@@ -16,8 +19,6 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
-      get :pay, :buy_view
-      post 'pay', 'buy_view'
     end
   end
   

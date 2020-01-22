@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find_by("#{params[:price]}")
+    @item = Item.find(params[:id])
     Payjp.api_key = "sk_test_f0603f441131265854585f27"
     Payjp::Charge.create(
       amount: @item.price, # 決済する値段
@@ -63,7 +63,8 @@ class ItemsController < ApplicationController
   end
 
   def buy_view
-    @item = Item.find_by("#{params[:id]}")
+    # @item = Item.find_by("#{params[:id]}")
+    @item = Item.find(params[:id])
   end
   private
 
