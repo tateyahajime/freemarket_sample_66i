@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_action, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :edit]
   
 
   def index
@@ -36,7 +36,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      # redirect_to new_item_path
       render "new"
       
     end
@@ -48,9 +47,6 @@ class ItemsController < ApplicationController
 
   end
 
-  def update
-  end
-
   def destroy
     if @item.destroy
       redirect_to root_path, notice: "削除が完了しました"
@@ -59,7 +55,17 @@ class ItemsController < ApplicationController
     end
   end
 
-  def mypage
+  def edit
+  end
+
+  def update
+    @item = Item.includes(:images).find(params[:id])
+    if @item.update(update_item_params)
+      @prefecture = Prefecture.find(@item.prefectures)
+      render "show"
+    else
+      render "edit"
+    end
   end
 
 
@@ -69,8 +75,12 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
   end
 
-  def set_action
+  def set_item
     @item = Item.find(params[:id])
+  end
+
+  def update_item_params
+    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: 1)
   end
 end
 
