@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 
+  require 'payjp'
   def index
 
     @item = Item.includes(:images,:shippings).order('created_at ASC')
@@ -50,7 +51,20 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  def pay
+    @item = Item.find_by("#{params[:price]}")
+    Payjp.api_key = "sk_test_f0603f441131265854585f27"
+    Payjp::Charge.create(
+      amount: @item.price, # 決済する値段
+      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      currency: 'jpy'
+    )
+    redirect_to root_path
+  end
 
+  def buy_view
+    @item = Item.find_by("#{params[:id]}")
+  end
   private
 
   def item_params
@@ -59,5 +73,6 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
     # params.require(:item).permit(:image, :item_name, :description, :condition, :charges, :date, :price, :order_status_id).merge(user_id: params[:user_id], x_category_id: params[:x_category_id], y_category_id: params[:y_category_id], z_category_id: params[:z_category_id])
   end
+
 end
 
