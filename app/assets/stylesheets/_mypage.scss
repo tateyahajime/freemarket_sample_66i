@@ -1,0 +1,181 @@
+.all {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  height: 100%;
+  .all1 {
+    display: flex;
+    margin: 0px 210px 0;
+
+    .mypage {
+      background-color: rgb(245, 245, 245);
+      margin-top: 40px;
+      margin-left: 40px;
+      &__box {
+        height: 200px;
+        background-color: hotpink;
+        position: relative;
+        img {
+          height: 200px;
+          width: 700px;
+        }
+        &-link {
+          width: 80px;
+          height: 80px;
+          border-radius: 150%;
+          background-color: indigo;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          img {
+            width:80px;
+            height:80px;
+            border-radius: 150%;
+          }
+        }
+        &-name {
+          position: absolute;
+          top: 137px;
+          left: 335px;
+        }
+        &-evaluation {
+          position: absolute;
+          top: 160px;
+          left: 300px
+        }
+        &-exhibition {
+          position: absolute;
+          top: 160px;
+          left: 360px
+        }
+      }
+      &__list {
+        height: 74px;
+        background-color: lawngreen;
+        display: flex;
+        &-notice {
+          width: 350px;
+          line-height: 74px;
+          background-color: #ffffff;
+          text-align: center;
+          border-top: 2px solid red;
+        }
+        &-yaru {
+          width: 350px;
+          background-color: #eee;
+          text-align: center;    
+          line-height: 74px;
+
+        }
+      }
+      &__menu {
+        background-color: #ffffff;
+        position: relative;
+        height: 80px;
+        padding: 16px;
+        &-area {
+          width: 54px;
+          height: 54px;
+          background-color: gray; 
+          line-height: 54px;
+          position: absolute;
+          top: 12px;
+          left: 10px;
+          &-logo {
+            position: relative;
+            img {
+              float: left;
+              width: 48px;
+              height: 48px;
+              position: absolute;
+              top: 2px;
+              left: 3px;
+            }
+          }
+        }
+        &-text {
+          margin-left: 80px;
+          font-size: 14px;
+        }
+        &-time {
+          margin-left: 80px;
+        }
+      }
+      &__list2 {
+        height: 80px;
+        background-color: #ffffff;
+        padding: 16px;
+        border-top: 2px solid rgb(245, 245, 245);
+        &-btn {
+          width: 100%;
+          height: 100%;
+          background-color: #eee;
+          text-align: center;
+          line-height: 48px;
+          cursor: pointer;
+        }
+      }
+      &__purchase {
+        margin-top: 40px;
+        height: 100%;
+        &-title {
+          height: 72px;
+          background-color: #FAFAFA;
+          font-size: 16px;
+          line-height: 72px;
+          font-weight: bold;
+          padding-left: 16px;
+        }
+        &-item {
+          width: 100%;
+          display: flex;
+          &-product {
+            height: 72px;
+            width: 350px;
+            background-color: #ffffff;
+            border-top: 2px solid red;
+            font-weight: bold;
+            padding-left: 16px;
+            text-align: center;
+            line-height: 72px;
+          }
+          &-past {
+            height: 72px;
+            width: 350px;
+            background-color: #eee;
+            font-weight: bold;
+            padding-left: 16px;
+            padding-left: 16px;
+            text-align: center;
+            line-height: 72px;
+          }
+        }
+        &-list {
+          height: 236px;
+          background-color: #ffffff;
+          position: relative;
+          margin-bottom: 60px;
+          img {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            opacity: 0.3;
+          }
+          &-product {
+            position: absolute;
+            top: 165px;
+            left: 253px;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+}
