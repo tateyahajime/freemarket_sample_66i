@@ -76,12 +76,11 @@ class ItemsController < ApplicationController
 
   def buy_view
   end
-  
+
   def mypage
   end
 
 
-  end
   private
 
   def item_params
