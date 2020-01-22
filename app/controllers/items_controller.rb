@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      # redirect_to new_item_path,data: {"turbolinks" => false}
+      # redirect_to new_item_path
       render "new"
       
     end
@@ -57,6 +57,9 @@ class ItemsController < ApplicationController
     else
       redirect_to item_path(@item.id), alert: "削除が失敗しました"
     end
+  end
+
+  def mypage
   end
 
 
