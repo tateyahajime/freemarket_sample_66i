@@ -1,3 +1,6 @@
+.pan
+  - breadcrumb :new
+  = breadcrumbs separator: " &rsaquo; "
 .exhibition
   .exhibition__header
     .exhibition__header-logo
@@ -18,7 +21,7 @@
                 = f.fields_for :images do |i|
                   = i.label :image, class: "sell--upload__drop__box" do
                     .sell--upload__drop__box__imageview
-                      = i.file_field :image,class:"file",style:"display:none;"
+                      = i.file_field :image,rquired: true,class:"file",style:"display:none;"
                       %pre
                         #preview
                           ドラッグドラッグアンドドロップ
@@ -69,6 +72,7 @@
                           .listing-select-wrapper__box
                           
                             -# = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                          
                             = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                             -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
 
@@ -97,7 +101,7 @@
                       サイズ
                       %span.form--require 必須
 
-                      .select--wrap
+                      .select--wrap1
                   
                         -# = f.select :size, [["XXS以下",1],["XS(SS)",2],["S",3],["M",4],["L",5],["XL(LL)",6],["2XL(3L)",7],["3XL(4L)",8],["4XL(5L)以上",9],["FREE SIZE",10]] ,{prompt: '---'}
                         = f.select :size, Item.sizes.keys.to_a, {prompt: '---'}
@@ -105,7 +109,7 @@
                     %label
                       ブランド
                       %span.form--require 任意
-                      .select--wrap  
+                      .select--wrap1 
                         -# = f.select :brand, [["Tシャツ/カットソー(半袖/袖なし)",1],["Tシャツ/カットソー(7分/長袖)",2],["シャツ/ブラウス(半袖/袖なし)",3]] ,{prompt: '---'}
                         =f.text_field :brand, placeholder: "例)シャネル"
                   

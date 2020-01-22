@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   resources :mercaris do
     collection do
 
+
      get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :sidebar, :credit, :credit_data, :register_user_data, :logout
     
+
     
-    
-    end
   end
+
   resources :items do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
       post 'pay', 'buy_view'
     end
   end
+
   
    
 
@@ -29,5 +31,6 @@ Rails.application.routes.draw do
       
     
   
+
  
 end
