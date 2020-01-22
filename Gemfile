@@ -89,4 +89,5 @@ end
 
  gem 'jquery-rails'
  gem 'ancestry'
+ gem "gretel"
 
