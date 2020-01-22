@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
 
-  before_action :set_action, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :destroy, :pay, :buy_view]
   
 
 
@@ -65,8 +65,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    @item = Item.find(params[:id])
-    Payjp.api_key = "sk_test_f0603f441131265854585f27"
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
     Payjp::Charge.create(
       amount: @item.price, # 決済する値段
       card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
@@ -76,8 +75,7 @@ class ItemsController < ApplicationController
   end
 
   def buy_view
-    # @item = Item.find_by("#{params[:id]}")
-    @item = Item.find(params[:id])
+
   end
   private
 
@@ -85,7 +83,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
   end
 
-  def set_action
+  def set_item
     @item = Item.find(params[:id])
   end
 
