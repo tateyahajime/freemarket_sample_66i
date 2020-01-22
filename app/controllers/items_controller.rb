@@ -64,7 +64,6 @@ class ItemsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def pay
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
     Payjp::Charge.create(
@@ -76,11 +75,11 @@ class ItemsController < ApplicationController
   end
 
   def buy_view
-=======
+  end
+  
   def mypage
   end
 
->>>>>>> master
 
   end
   private
