@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      # redirect_to new_item_path,data: {"turbolinks" => false}
+      # redirect_to new_item_path
       render "new"
       
     end
@@ -64,6 +64,7 @@ class ItemsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   def pay
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
     Payjp::Charge.create(
@@ -75,6 +76,11 @@ class ItemsController < ApplicationController
   end
 
   def buy_view
+=======
+  def mypage
+  end
+
+>>>>>>> master
 
   end
   private

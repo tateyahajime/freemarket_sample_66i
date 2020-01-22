@@ -53,5 +53,8 @@ class MercarisController < ApplicationController
 
   def register_user_data
   end
-  
+
+  def mypage
+  end
+
 end

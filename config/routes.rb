@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     collection do
 
 
-     get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :sidebar, :credit, :credit_data, :register_user_data, :logout
+
+     get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :buy, :sidebar, :credit, :credit_data, :register_user_data, :mypage, :logout
+   end 
     
 
     end
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get :mypage
     end
   end
  
