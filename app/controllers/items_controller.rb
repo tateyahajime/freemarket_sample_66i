@@ -62,10 +62,11 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.includes(:images).find(params[:id])
+    @prefecture = Prefecture.find(@item.prefectures)
     if @item.update(update_item_params)
-       redirect_to item_path(@item.id)
+      render :show
     else
-      redirect_to edit_item_path(@item.id)
+      render :edit
     end
   end
 
