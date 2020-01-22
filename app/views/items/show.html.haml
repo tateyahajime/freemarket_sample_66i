@@ -51,19 +51,14 @@
             = link_to @item.brand, root_path
           .show__product-box-area2-exhibition2-box3
             = @item.condition
-            -# 未使用に近い
           .show__product-box-area2-exhibition2-box3
             = @item.charges
-            -# 送料込み(出品者負担)
           .show__product-box-area2-exhibition2-box3
-            -# = @item.shipping
             らくらくメルカリ便
           .show__product-box-area2-exhibition2-box3
             = @prefecture.name
-            -# = link_to "埼玉県",root_path
           .show__product-box-area2-exhibition2-box3
             = @item.date 
-            -# 1~2日で発送
     .show__product-price
       %span.show__product-price-1
         ¥
@@ -77,8 +72,7 @@
       =link_to "購入画面に進む",root_path
 
     .show__product-btn2
-      =link_to "商品の編集",root_path
-
+      =link_to "商品の編集",edit_item_path(@item.id) , method: :get
     .show__product-or
       or
     .show__product-btn3

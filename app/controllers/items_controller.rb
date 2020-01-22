@@ -48,14 +48,24 @@ class ItemsController < ApplicationController
 
   end
 
-  def update
-  end
-
   def destroy
     if @item.destroy
       redirect_to root_path, notice: "削除が完了しました"
     else
       redirect_to item_path(@item.id), alert: "削除が失敗しました"
+    end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.includes(:images).find(params[:id])
+    if @item.update(update_item_params)
+       redirect_to item_path(@item.id)
+    else
+      redirect_to edit_item_path(@item.id)
     end
   end
 
@@ -68,6 +78,10 @@ class ItemsController < ApplicationController
 
   def set_action
     @item = Item.find(params[:id])
+  end
+
+  def update_item_params
+    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: 1)
   end
 end
 
