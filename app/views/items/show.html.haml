@@ -73,7 +73,7 @@
         送料込み
 
     .show__product-btn
-      =link_to "購入画面に進む","/items/#{@item.id}/buy_view"
+      =link_to "購入画面に進む","/cards/#{@item.id}/buy_view"
 
     .show__product-btn2
       =link_to "商品の編集",edit_item_path(@item.id) , method: :get

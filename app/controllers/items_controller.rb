@@ -1,10 +1,5 @@
 class ItemsController < ApplicationController
 
-
-
-  require 'payjp'
-
-
   before_action :set_item, only: [:show, :destroy, :pay, :buy_view, :edit]
 
   
@@ -63,20 +58,10 @@ class ItemsController < ApplicationController
   end
 
 
-  def pay
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
-    Payjp::Charge.create(
-      amount: @item.price, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
-      currency: 'jpy'
-    )
-    redirect_to root_path
-  end
-
-  def buy_view
-  end
+  
 
   def mypage
+  end
 
   def edit
   end
