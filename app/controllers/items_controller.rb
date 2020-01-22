@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      # redirect_to new_item_path
+      # redirect_to new_item_path,data: {"turbolinks" => false}
       render "new"
       
     end
@@ -62,14 +62,11 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.includes(:images).find(params[:id])
-    @prefecture = Prefecture.find(@item.prefectures)
     if @item.update(update_item_params)
-      render :show
+       redirect_to item_path(@item.id)
     else
-      render :edit
+      redirect_to edit_item_path(@item.id)
     end
-    
-  def mypage
   end
 
 
