@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :mercaris do
     collection do
 
-     get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :buy, :sidebar, :credit, :credit_data, :register_user_data
+     get :form1, :new1, :new2, :new4, :new3, :new5, :exhibition, :out, :buy, :sidebar, :credit, :credit_data, :register_user_data, :mypage
    end 
     
   end
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get :mypage
     end
   end
  
