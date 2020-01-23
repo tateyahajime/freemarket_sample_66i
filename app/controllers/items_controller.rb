@@ -1,7 +1,10 @@
 class ItemsController < ApplicationController
 
-  before_action :set_action, only: [:show, :destroy, :edit]
+
+  before_action :set_item, only: [:show, :destroy, :pay, :buy_view, :edit]
+
   
+
 
   def index
     @item = Item.includes(:images,:shippings).order('created_at ASC')
@@ -56,6 +59,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def mypage
+  end
+
   def edit
   end
 
@@ -67,6 +73,7 @@ class ItemsController < ApplicationController
     else
       render "edit"
     end
+
   end
 
 
@@ -76,12 +83,14 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
   end
 
-  def set_action
+  def set_item
     @item = Item.find(params[:id])
   end
+
 
   def update_item_params
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: 1)
   end
+
 end
 
