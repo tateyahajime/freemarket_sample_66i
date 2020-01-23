@@ -63,12 +63,12 @@
 |item_name|string||
 |price|integer||
 |brand|string||
-|size|float||
-|condition|string||
+|size|integer||
+|condition|integer||
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 |charges|integer||
-|date|string||
+|date|integer||
 ### Association
 - belongs_to :brands
 - has_many : images
