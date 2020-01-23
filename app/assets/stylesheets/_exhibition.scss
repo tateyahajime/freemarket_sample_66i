@@ -1,3 +1,14 @@
+.pan {
+  margin-left: 205px;
+  a {
+    text-decoration: none;
+    color: gray;
+  }
+  a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+}
 .exhibition {
   background-color: rgb(245, 245, 245);
   width: 100vw;
@@ -137,7 +148,25 @@ main {
   padding: 40px;
   border-top: 1px solid #eee;
 }
-
+.listing-default--require {
+  margin: 40px 0 0;
+}
+.listing-select-wrapper__box--select {
+  height: 48px;
+  margin: 5px 0 5px 0;
+  padding-left:10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  line-height: 48px;
+  cursor: pointer;
+}
+.listing-select-wrapper__box {
+  position: relative;
+  .listing-select-wrapper__box--arrow-down{
+    position: absolute;
+  }
+}
 .form__group {
   margin: 40px 0 0;
   &:first-child {
@@ -210,6 +239,20 @@ label {
   position: relative;
   background: #fff;
 }
+.select--wrap1 {
+  position: relative;
+  background: #fff;
+  width: 400px;
+}
+#item_size {
+  height: 48px;
+}
+#item_brand {
+  position: relative;
+  background: #fff;
+  width: 400px;
+  height: 48px;
+}
 .select__default {
   position: relative;
   z-index: 2;
@@ -223,6 +266,7 @@ label {
   cursor: pointer;
   margin-top: 5px;
 }
+
 
 .sell_price {
   & li:first-child {
@@ -332,6 +376,15 @@ label {
   color: #fff;
   font-size: 12px;
   vertical-align: top;
+}
+.listing-default--require {
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top
 }
 .form__question {
   display: inline-block;

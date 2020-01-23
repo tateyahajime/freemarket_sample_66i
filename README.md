@@ -1,4 +1,5 @@
 
+
 # README
 
 
@@ -62,19 +63,18 @@
 |item_name|string||
 |price|integer||
 |brand|string||
-|size|float||
-|condition|string||
-|x_category_id|references|foreign_key: true|
-|y_categorys_id|references|foreign_key: true|
-|z_categorys_id|references|foreign_key: true|
+|size|integer||
+|condition|integer||
+|user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
+|charges|integer||
+|date|integer||
 ### Association
-- has_many :buyer
-- has_many :saler
 - belongs_to :brands
 - has_many : images
-- belongs_to : x_category
-- belongs_to : y_category
-- belongs_to : z_category
+- belongs_to :category
+- belongs_to :user
+- has_many :shippings
 
 ## paysテーブル
 |Column|Type|Options|
@@ -90,9 +90,8 @@
 ## shippingsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|shipping_charges|integer|
-|area|text|
-|date|datetime|
+|shipping_attributes|integer|
+|area|string|
 |first_name|string|
 |last_name|string|
 |kana_first_name|string|
@@ -102,14 +101,14 @@
 |city|string|
 |street|string|
 |building_name|string|
-|phon|integer|
+|phone|integer|
 ### Association
 - belongs_to :users
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|text||
+|image|string||
 |item_id|integer|foreign_key: true|
 ### Association
 - belongs_to :users
@@ -122,27 +121,13 @@
 ### Association
 - has_many :items
 
-## xテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|x_category_name|string||
+|category_name|string||
 ### Association
 - has_many :items
-- has_many :y_categroy
 
-## yテーブル
-|Column|Type|Options|
-|------|----|-------|
-|y_category_name|string||
-### Association
-- has_many :items
-- has_many :z_category
-- belongs_to :x_category
 
-## zテーブル
-|Column|Type|Options|
-|------|----|-------|
-|z_category_name|string||
-### Association
-- has_many :items
-- belongs_to :y_categories
+
+

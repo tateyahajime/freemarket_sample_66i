@@ -1,0 +1,61 @@
+= render "header"
+.all
+  .all1
+    = render "sidebar"
+    .mypage
+      .mypage__box
+        = image_tag(src="yama.jpg")
+        .mypage__box-link
+          = image_tag(src="neko.jpg", class: "image2")
+        .mypage__box-name
+          名前
+        .mypage__box-evaluation
+          評価 0  
+        .mypage__box-exhibition
+          出品数 0 
+      .mypage__list
+        .mypage__list-notice
+          お知らせ
+        .mypage__list-yaru
+          やることリスト
+      .mypage__menu
+        .mypage__menu-area
+          .mypage__menu-area-logo
+            = link_to image_tag(src="logo_red.svg"),root_path
+        .mypage__menu-text
+          あああああああああ
+        .mypage__menu-time
+          1日前
+      .mypage__menu
+        .mypage__menu-area
+          .mypage__menu-area-logo
+            = link_to image_tag(src="logo_red.svg"),root_path
+        .mypage__menu-text
+          あああああああああ
+        .mypage__menu-time
+          1日前
+      .mypage__menu
+        .mypage__menu-area
+          .mypage__menu-area-logo
+            = link_to image_tag(src="logo_red.svg"),root_path
+        .mypage__menu-text
+          あああああああああ
+        .mypage__menu-time
+          1日前
+      .mypage__list2
+        .mypage__list2-btn
+          一覧をみる
+      .mypage__purchase
+        .mypage__purchase-title
+          購入した商品
+        .mypage__purchase-item
+          .mypage__purchase-item-product
+            取引中
+          .mypage__purchase-item-past
+            過去の取引
+        .mypage__purchase-list
+          = image_tag(src="logo_white.svg")
+          .mypage__purchase-list-product
+            取引中の商品はありません
+
+= render "footer"
