@@ -7,16 +7,18 @@
       商品購入の確認
     .buy_main-content
       .buy_main-content-image
-        = link_to image_tag(src= "himawari.jpg",class: "main_content_imagefot")
+        = link_to image_tag(src= @item.images.first.image.url, class: "show__product-box-area-image-3")
       .buy_main-content-name
-        手帳2020
+        = @item.item_name
         .buy_main-content-name-prace
-          ¥500 (税込み) 送料込み
+          = @item.price
+          円　送料込み
     .buy_main-detail
       .buy_main-detail-pay
         支払い金額
         .buy_main-detail-pay-money
-          ¥500
+          = @item.price
+          円
       .buy_main-detail-credit
         .buy_main-detail-credit-title
           支払い方法
@@ -42,8 +44,10 @@
         .buy_main-detail-address-name
           高橋 花子
     .buy_main-bottun
-      =form_with do |f|
-        =f.submit "購入する", class: "new1-btn"
+      = form_tag(action: :pay, method: :post) do
+        :plain
+        %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", "data-text": "購入する", "data-key": "pk_test_8d2d1d63601c109dbd5b4906"}
+
   .buy_footer
     .buy_footer-links
       .buy_footer-links-title

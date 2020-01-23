@@ -1,5 +1,7 @@
 class MercarisController < ApplicationController
 
+  require 'payjp'
+
   def index
    
   end
@@ -37,9 +39,6 @@ class MercarisController < ApplicationController
   def new1
   end
   
-  def buy
-  end
-
   def sidebar
   end
 
@@ -57,4 +56,5 @@ class MercarisController < ApplicationController
 
   def mypage
   end
+
 end
