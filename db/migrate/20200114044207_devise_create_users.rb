@@ -7,18 +7,25 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :nickname,null: false, default: ""
-      t.string :first_name
-      t.string :last_name
-      t.string :kana_first_name
-      t.string :kana_last_name
-      t.string :zip_code
-      t.string :prefectures
-      t.string :city
-      t.string :street
-      t.integer :phoner
-      t.date :birth_year
-      t.date :birth_month
-      t.date :birth_day
+      t.string :first_name, null: false
+      t.string :last_name, null: false
+      t.string :kana_first_name, null: false
+      t.string :kana_last_name, null: false
+      t.string :zip_code, null: false
+      t.string :prefectures, null: false, default: 0
+      t.string :city, null: false
+      t.string :street, null: false
+      t.string :building, null: false
+      t.string :tell
+      t.string :phone, null: false
+      t.string :birth_year, null: false
+      t.string :birth_month, null: false
+      t.string :birth_day, default: ""
+      t.string :number
+      t.string :expiration_date_month
+      t.string :expiration_date_year
+      t.string :code
+      
       
 
 
