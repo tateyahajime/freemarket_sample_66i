@@ -1,7 +1,8 @@
 = render "header"
 .pan
-  - breadcrumb :show
-  = breadcrumbs separator: " &rsaquo; "
+  -# エラーが出てしまったので、購入機能実装後また直します。
+  -# - breadcrumb :show
+  -# = breadcrumbs separator: " &rsaquo; "
 .show
   .show__header
   .show__product
@@ -72,7 +73,7 @@
         送料込み
 
     .show__product-btn
-      =link_to "購入画面に進む",root_path
+      =link_to "購入画面に進む","/cards/#{@item.id}/buy_view"
 
     .show__product-btn2
       =link_to "商品の編集",edit_item_path(@item.id) , method: :get
