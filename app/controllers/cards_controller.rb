@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
 
-  before_action :set_item, only: [:pay, :buy_view]
+  before_action :set_item, only: [:pay, :buy_view, :pay_destroy]
+  after_action :pay_destroy, only: [:pay]
   require 'payjp'
 
   def pay
@@ -14,6 +15,14 @@ class CardsController < ApplicationController
   end
 
   def buy_view
+  end
+
+  def pay_destroy
+    if @item.destroy
+      flash[:buy] = '購入しました'
+    else
+      flash[:buy_not] = '購入に失敗しました'
+    end
   end
 
   private
