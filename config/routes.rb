@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get  '/:id/buy_view' => 'cards#buy_view'
       post  '/:id/pay' => 'cards#pay'
       get  '/:id/pay' => 'cards#pay'
+      get :pay_destroy
     end
   end
 
