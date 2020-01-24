@@ -2,7 +2,7 @@ class SignupController < ApplicationController
   before_action :validates_new1, only: :new2 
   before_action :validates_new2, only: :new3 
   before_action :validates_new3, only: :new4
-  # before_action :validates_new4, only: :new5
+  # before_action :validates_new4, only: :new5  カード登録で必要
 
   def new1
     @user = User.new 
@@ -38,6 +38,7 @@ class SignupController < ApplicationController
   end
 
   def new5
+    # カード登録で必要
     # session[:number] = user_params[:number]
     # session[:expiration_date_month] = user_params[:expiration_date_month]
     # session[:expiration_date_year] = user_params[:expiration_date_year]
@@ -105,7 +106,7 @@ class SignupController < ApplicationController
         :street,
         :tell,
         # :number,
-        # :expiration_date_month,
+        # :expiration_date_month, カード登録で必要
         # :expiration_date_year,
         # :code
       )
@@ -196,7 +197,7 @@ class SignupController < ApplicationController
   #   session[:expiration_date_month] = user_params[:expiration_date_month]
   #   session[:expiration_date_year] = user_params[:expiration_date_year]
   #   session[:code] = user_params[:code]
-    
+    # カード登録で必要
 
   #   @user = User.new(
   #     number: session[:number], 
@@ -204,6 +205,7 @@ class SignupController < ApplicationController
   #     expiration_date_year: session[:expiration_date_year], 
   #     code: session[:code], 
   #   )
+  # カード登録で必要
   
   #   render '/signup/new4' unless @user.valid?(:validates_new4)  上はバリデーションの部分なので取っておく
   # end
