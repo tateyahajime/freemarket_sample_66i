@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_01_18_051457) do
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -37,11 +32,11 @@ ActiveRecord::Schema.define(version: 2020_01_18_051457) do
     t.string "item_name"
     t.string "price"
     t.string "brand"
-    t.string "size"
-    t.string "condition"
-    t.string "charges"
-    t.string "date"
-    t.string "prefectures"
+    t.integer "size"
+    t.integer "condition"
+    t.integer "charges"
+    t.integer "date"
+    t.integer "prefectures"
     t.bigint "category_id"
     t.text "description"
     t.bigint "user_id"

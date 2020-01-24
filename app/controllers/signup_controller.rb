@@ -205,7 +205,7 @@ class SignupController < ApplicationController
   #     code: session[:code], 
   #   )
   
-  #   render '/signup/new4' unless @user.valid?(:validates_new4)
+  #   render '/signup/new4' unless @user.valid?(:validates_new4)  上はバリデーションの部分なので取っておく
   # end
 
 end
