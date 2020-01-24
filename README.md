@@ -128,6 +128,15 @@
 ### Association
 - has_many :items
 
+## sns_credentialsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|provider|string||
+|uid|string||
+|user_id|references||
+### Association
+- belongs_to :user
+
 
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_051457) do
+ActiveRecord::Schema.define(version: 2020_01_23_105617) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 2020_01_18_051457) do
     t.string "item_name"
     t.string "price"
     t.string "brand"
-    t.integer "size"
-    t.integer "condition"
-    t.integer "charges"
-    t.integer "date"
-    t.integer "prefectures"
+    t.string "size"
+    t.string "condition"
+    t.string "charges"
+    t.string "date"
+    t.string "prefectures"
     t.bigint "category_id"
     t.text "description"
     t.bigint "user_id"
@@ -93,6 +93,15 @@ ActiveRecord::Schema.define(version: 2020_01_18_051457) do
     t.index ["user_id"], name: "index_shippings_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -125,4 +134,5 @@ ActiveRecord::Schema.define(version: 2020_01_18_051457) do
   add_foreign_key "pays", "users"
   add_foreign_key "shippings", "items"
   add_foreign_key "shippings", "users"
+  add_foreign_key "sns_credentials", "users"
 end

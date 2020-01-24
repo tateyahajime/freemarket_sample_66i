@@ -6,9 +6,6 @@ class ItemsController < ApplicationController
   def index
     @item = Item.includes(:images,:shippings).order('created_at ASC')
     @items = Item.all
-    # @parents = Category.all.order("id ASC").limit(13)
-   
-
   end
 
   def new
@@ -22,7 +19,7 @@ class ItemsController < ApplicationController
 
 
   def get_category_children
-    @category_children = Category.find_by("#{params[:parent]}", ancestry: nil).children
+    @category_children = Category.find_by(id:"#{params[:parent_id]}", ancestry: nil).children
  end
 
  def get_category_grandchildren
@@ -58,10 +55,6 @@ class ItemsController < ApplicationController
       redirect_to item_path(@item.id), alert: "削除が失敗しました"
     end
   end
-
-  def mypage
-  end
-
 
   private
 
