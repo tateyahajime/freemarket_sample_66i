@@ -1,7 +1,10 @@
 class ItemsController < ApplicationController
 
-  before_action :set_action, only: [:show, :destroy]
+
+  before_action :set_item, only: [:show, :destroy, :pay, :buy_view, :edit]
+
   
+
 
   def index
     @item = Item.includes(:images,:shippings).order('created_at ASC')
@@ -33,7 +36,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = '出品に失敗しました。必須項目を確認してください。'
-      # redirect_to new_item_path
+      # redirect_to new_item_path,data: {"turbolinks" => false}
       render "new"
       
     end
@@ -41,11 +44,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @prefecture = Prefecture.find(@item.prefectures)
+    # @prefecture = Prefecture.find(@item.prefectures)
 
-  end
-
-  def update
   end
 
   def destroy
@@ -56,14 +56,38 @@ class ItemsController < ApplicationController
     end
   end
 
+  def mypage
+  end
+
+  def edit
+  end
+
+  def update
+    @item = Item.includes(:images).find(params[:id])
+    if @item.update(update_item_params)
+      @prefecture = Prefecture.find(@item.prefectures)
+      render "show"
+    else
+      render "edit"
+    end
+
+  end
+
+
   private
 
   def item_params
     params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
   end
 
-  def set_action
+  def set_item
     @item = Item.find(params[:id])
   end
+
+
+  def update_item_params
+    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: 1)
+  end
+
 end
 

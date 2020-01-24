@@ -1,0 +1,87 @@
+.all {
+  background-color: rgb(245, 245, 245);
+  width: 100%;
+  height: 100%;
+  padding-bottom: 200px;
+  .all1 {
+    display: flex;
+    margin: 0px 210px 0;
+
+    .mypage {
+      background-color: rgb(245, 245, 245);
+      margin-top: 20px;
+      margin-left: 40px;
+
+      &__title {
+        background-color: #ffffff;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        font-size: 24px;
+        padding: 8px 24px;
+        text-align: center;
+      }
+      &__box {
+        height: 200px;
+        img {
+          height: 200px;
+          width: 700px;
+        }
+        &-link {
+          display: flex;
+          width: 300px;
+          height: 80px;
+          .image1 {
+            width:80px;
+            height:80px;
+            border-radius: 150%;
+          }
+          &__name {
+            &__form {
+              width: 220px;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            margin-left: 8px;
+            margin-top: 15px;
+            }
+          }
+        }
+      }
+      &__form {
+        margin-top: 76px;
+        margin-left: -280px;
+        width: 700px;
+        height: 360px;
+        background-color: #ffffff;
+        padding: 40px 16px;
+        &__area {
+          min-height: 216px;
+          width: 100%;
+          &__text {
+            min-height: 216px;
+          width: 100%;
+            
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+          &__button {
+            height: 50px;
+            width: 100%;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            text-align: center;    
+            line-height: 50px;
+            margin: 16px 0 0;
+          }
+        }
+      }
+    }
+  }
+}

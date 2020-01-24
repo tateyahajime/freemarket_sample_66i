@@ -1,3 +1,3 @@
-class Pay < ApplicationRecord
-  belongs_to :user
-end
+# class Pay < ApplicationRecord
+#   belongs_to :user
+# end

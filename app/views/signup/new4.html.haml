@@ -25,7 +25,7 @@
         .new4__form-box1__upper__logo
           必須
       .new4__form-box1-form
-        =form_with do |f|
+        =form_with model: @user, url:signup_index_path, method: :post, local: true do |f|
           =f.text_field :number, placeholder: "半角数字のみ"
          
           %ul.new4__form-box1-form__logo
@@ -50,11 +50,11 @@
               .new4__form-box1-form-box2__upper__logo
                 必須
             .new4__form-box1-form-box2__month
-              = f.select :month, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12]], prompt: '--'
-              = f.label :month, "月"
+              = f.select :expiration_date_month, [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10],[11,11],[12,12]], prompt: '--'
+              = f.label :expiration_date_month, "月"
             .new4__form-box1-form-box2__year
-              = f.select :year, [2020,2019,2018,], prompt: '--'
-              = f.label :year, "年"
+              = f.select :expiration_date_year, [2020,2019,2018,], prompt: '--'
+              = f.label :expiration_date_year, "年"
 
           .new4__form-box1-form-box3
             .new4__form-box1-form-box3__upper
@@ -63,10 +63,10 @@
               .new4__form-box1-form-box3__upper__logo
                 必須
             .new4__form-box1--form-box3-form
-              = f.text_field :number, placeholder: "カード背面4桁もしくは3桁の番号"
+              = f.text_field :code, placeholder: "カード背面4桁もしくは3桁の番号"
             .new4__form-link
               =link_to "カード裏面の番号とは？", "https://www .mercari.com/jp/help_center/article/244/"
-            =f.submit "次へ進む", class: "btn"
+              =f.submit "次へ進む", class: "new4btn"
   .new4__footer
     .new4__footer-links
       .new4__footer-links-title

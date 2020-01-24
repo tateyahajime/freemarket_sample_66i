@@ -12,7 +12,7 @@ class CreateShippings < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :street
       t.string :building_name
-      t.integer :phone
+      t.string :phone
       t.string :area
       
       t.references :user, foreign_key: true
