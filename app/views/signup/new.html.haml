@@ -12,14 +12,16 @@
           = icon('fas', 'envelope', class: "new__main-mail-logo-1")
     .new__main-facebook
       Facebookで登録する
-      .new__main-facebook-logo
-        = link_to root_path do
+      .new__main-facebook-logo 
+        = link_to user_facebook_omniauth_authorize_path, method: :post do
           = icon('fab', 'facebook-square', class:"new__main-facebook-logo-2")
+
+       
           
     .new__main-google
       Googleで登録する
       .new__main-google-logo
-        = link_to root_path do
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
           =icon('fab', 'google', class:"new__main-google-logo-3")
   .new__footer
     .new__footer-links
