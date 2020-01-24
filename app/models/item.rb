@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   # belongs_to_active_hash :prefecture
   belongs_to :category, optional: true
  
-  # accepts_nested_attributes_for :category, allow_destroy: true
+  accepts_nested_attributes_for :category, allow_destroy: true
   validates_associated :images
   validates :images, presence: true
   validates :item_name, presence: true
