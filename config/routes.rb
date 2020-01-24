@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # root to: 'signup#index'
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
   # root to: 'mercari#new'
   # get 'mercaris', to: 'mercaris#form'
   root to: 'items#index'
@@ -38,7 +40,7 @@ Rails.application.routes.draw do
   end
 
   resources :mypages do
-    menber do
+    member do
       get :mypage
       get :mypage_edit
     end
