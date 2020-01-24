@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_01_23_105617) do
 
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -39,11 +32,11 @@ ActiveRecord::Schema.define(version: 2020_01_23_105617) do
     t.string "item_name"
     t.string "price"
     t.string "brand"
-    t.string "size"
-    t.string "condition"
-    t.string "charges"
-    t.string "date"
-    t.string "prefectures"
+    t.integer "size"
+    t.integer "condition"
+    t.integer "charges"
+    t.integer "date"
+    t.integer "prefectures"
     t.bigint "category_id"
     t.text "description"
     t.bigint "user_id"
@@ -62,10 +55,10 @@ ActiveRecord::Schema.define(version: 2020_01_23_105617) do
   end
 
   create_table "pays", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "card_number"
+    t.integer "number"
     t.date "expiration_date_month"
     t.date "expiration_date_year"
-    t.integer "security_code"
+    t.integer "code"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_01_23_105617) do
     t.string "city"
     t.string "street"
     t.string "building_name"
-    t.integer "phone"
+    t.string "phone"
     t.string "area"
     t.bigint "user_id"
     t.bigint "item_id"
@@ -106,18 +99,24 @@ ActiveRecord::Schema.define(version: 2020_01_23_105617) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", default: "", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "kana_first_name"
-    t.string "kana_last_name"
-    t.string "zip_code"
-    t.string "prefectures"
-    t.string "city"
-    t.string "street"
-    t.integer "phoner"
-    t.date "birth_year"
-    t.date "birth_month"
-    t.date "birth_day"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "kana_first_name", null: false
+    t.string "kana_last_name", null: false
+    t.string "zip_code", null: false
+    t.string "prefectures", default: "0", null: false
+    t.string "city", null: false
+    t.string "street", null: false
+    t.string "building", null: false
+    t.string "tell"
+    t.string "phone", null: false
+    t.string "birth_year", null: false
+    t.string "birth_month", null: false
+    t.string "birth_day", default: ""
+    t.string "number"
+    t.string "expiration_date_month"
+    t.string "expiration_date_year"
+    t.string "code"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
