@@ -1,10 +1,6 @@
 class ItemsController < ApplicationController
 
-
   before_action :set_item, only: [:show, :destroy, :pay, :buy_view, :edit]
-
-  
-
 
   def index
     @item = Item.includes(:images,:shippings).order('created_at ASC')
@@ -62,7 +58,14 @@ class ItemsController < ApplicationController
   def mypage
   end
 
+  def mypage_edit
+  end
+
   def edit
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
   end
 
   def update
