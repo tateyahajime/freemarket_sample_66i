@@ -59,6 +59,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
   end
 
   def update
