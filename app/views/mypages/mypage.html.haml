@@ -1,4 +1,4 @@
-= render "header"
+-# = render "header" 
 .all
   .all1
     = render "sidebar"
@@ -57,5 +57,12 @@
           = image_tag(src="logo_white.svg")
           .mypage__purchase-list-product
             取引中の商品はありません
+    .main__Exhibition
+      .main__Exhibition-image
+        .main__Exhibition-image-text
+          出品
+        .main__Exhibition-image-logo
+          =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
 
-= render "footer"
+
+-# = render "footer"
