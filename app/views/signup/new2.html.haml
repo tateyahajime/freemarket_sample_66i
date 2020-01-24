@@ -23,7 +23,7 @@
       .new2__form-box-phone
         携帯電話の番号
       .new2__form-box-form
-        =form_with do |f|
+        =form_with model: @user, url:new3_signup_index_path, local: true do |f|
           =f.text_field :phone, placeholder: "携帯電話の番号を入力", class: "new2__form-box-form-a"
           本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           =f.submit "SMSを送信する", class: "new2__form-box-form-b"

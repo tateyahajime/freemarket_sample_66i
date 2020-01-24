@@ -26,22 +26,22 @@
         .new3__form-box-area-required
           必須
       .new3__form-box-form
-        =form_with do |f|
-          =f.text_field :firstname, placeholder: "例）山田", class: "new3__form-box-form-na"
-          =f.text_field :lastname, placeholder: "例）彩", class: "new3__form-box-form-me"
+        =form_with model: @user, url:new4_signup_index_path, local: true do |f|
+          =f.text_field :last_name, placeholder: "例）山田", class: "new3__form-box-form-na"
+          =f.text_field :first_name, placeholder: "例）彩", class: "new3__form-box-form-me"
           .new3__form-box-form-area
             .new3__form-box-form-area-title-1
               お名前カナ
             .new3__form-box-form-area-required-1
               必須
-          =f.text_field :kanafirstname, placeholder: "例）ヤマダ", class: "new3__form-box-form-na"
-          =f.text_field :kanalastname, placeholder: "例）アヤ", class: "new3__form-box-form-me"
+          =f.text_field :kana_last_name, placeholder: "例）ヤマダ", class: "new3__form-box-form-na"
+          =f.text_field :kana_first_name, placeholder: "例）アヤ", class: "new3__form-box-form-me"
           .new3__form-box-form-area
             .new3__form-box-form-area-title-1
               郵便番号
             .new3__form-box-form-area-required-1
               必須
-          =f.text_field :post, placeholder: "例）１２３−４５６", class: "new3__form-box-form-na"
+          =f.text_field :zip_code, placeholder: "例）１２３−４５６", class: "new3__form-box-form-na"
           .new3__form-box-form-area
             .new3__form-box-form-area-title-1
               都道府県
@@ -53,13 +53,13 @@
               市区町村
             .new3__form-box-form-area-required-1
               必須
-          =f.text_field :municipality, placeholder: "例）横浜市緑区", class: "new3__form-box-form-na"
+          =f.text_field :city, placeholder: "例）横浜市緑区", class: "new3__form-box-form-na"
           .new3__form-box-form-area
             .new3__form-box-form-area-title-1
               番地
             .new3__form-box-form-area-required-1
               必須
-          =f.text_field :address, placeholder: "例）青山１−１−１", class: "new3__form-box-form-na"
+          =f.text_field :street, placeholder: "例）青山１−１−１", class: "new3__form-box-form-na"
           .new3__form-box-form-area
             .new3__form-box-form-area-title-1
               建物名
@@ -71,7 +71,7 @@
               電話
             .new3__form-box-form-area-required-2
               任意
-          =f.text_field :tel, placeholder: "例）０９０１２３４５６７８", class: "new3__form-box-form-na"
+          =f.text_field :tell, placeholder: "例）０９０１２３４５６７８", class: "new3__form-box-form-na"
           =f.submit "次へ進む", class: "new3btn"
   .new3__footer
     .new3__footer-links

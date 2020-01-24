@@ -56,6 +56,8 @@
       display: flex;
       justify-content: space-between;
       margin-top: 8px;
+      // float: right;
+      // position: relative;
       &__left-box {
         margin-left: -3px;
         display: flex;
@@ -74,7 +76,6 @@
             height: 12px;
             margin-right: 4px;
           }
-
         }
         &__brand {
           display: flex;
@@ -95,35 +96,50 @@
         }
       }
       &__right-box {
-        a {
-          text-decoration: none;
-        }
-        li {
-          display: inline-block;
-          margin: 0 0 0 8px;
-          font-size: 14px;
-        }
+        display: flex;
         &__btn {
           border-radius: 4px;
-          text-align: center;
+          text-align: right;
           margin: 0;
           padding: 0 10px;
           line-height: 30px;
-        }
-        .new {
-          padding: 8px 10px;
+
+        &__new {
+          
           background-color: rgb(234, 53, 45);
-          border: 1px solid rgb(234, 53, 45);
-          color: white;
-        }
-        .login {
+          color: rgb(255, 255, 255);
           display: block;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(234, 53, 45);
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+        }
+        &__login {
+          margin-left: 10px;
+          display: block;
+          padding: 8px 16px;
           border: 1px solid #0099e8;
-          background-color: white;
-          color: #0099e8;
+          background-color: #0099e8;
+          color: #fafafa;
+          border-radius: 4px;
+          // position: absolute;
+        }
         }
       }
     }
   }
+}
+
+a {
+  text-decoration: none;
+  
+}
+li {
+  list-style: none;
+  margin: 0 0 0 8px;
+  font-size: 14px;
 }
 
