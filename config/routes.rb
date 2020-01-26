@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   # get 'mercaris', to: 'mercaris#form'
   resources :cards do
     collection do
-      get  '/:id/buy_view' => 'cards#buy_view'
+      get  '/:id/buy_view' => 'cards#buy_view', as: :buy_view
       post  '/:id/pay' => 'cards#pay'
       get  '/:id/pay' => 'cards#pay'
       get :pay_destroy
