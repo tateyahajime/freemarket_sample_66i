@@ -12,19 +12,8 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
-
-
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-
-  $('#image_box').on('change', '.file', function(e) {
-    // fileIndexの先頭の数字を使ってinputを作る
-    // $('#image_box').append(buildFileField(fileIndex[0]));
-    // fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    // fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  });
-  
 
   $('#image_box').on('click', '.js-remove', function() {
     $(this).parent().remove();
