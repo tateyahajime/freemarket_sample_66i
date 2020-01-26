@@ -195,7 +195,8 @@
       .main__Exhibition-image-text
         出品
       .main__Exhibition-image-logo
-        =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
+        -if user_signed_in?
+          =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
 
 = render "footer"
 
