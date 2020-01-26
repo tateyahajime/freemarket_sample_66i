@@ -97,11 +97,11 @@
 
     .show-2
       .show__product-btn
-        =link_to "購入画面に進む","/cards/#{@item.id}/buy_view"
+        =link_to "購入画面に進む",buy_view_cards_path
   - else
     .show-2
       .show__product-btn
-        =link_to "購入画面に進む","/signup/new"
+        =link_to "購入画面に進む",new_signup_path
     
 
 
