@@ -39,15 +39,13 @@
                 %h3.sell--sub__head 商品の詳細
                 .sell__form__box
                   .form__group
-                    s.fa-chevron-down.listing-select-wrapper__box--arrow-down
-
                     .listing-form-box
                       .listing-product-detail__category
                         = f.label 'カテゴリー', class: 'listing-default__label'
                         %span.listing-default--require 必須
                         .listing-select-wrapper
                           .listing-select-wrapper__box
-                          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+                            = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                     %label
                       サイズ
                       %span.form--require 必須
