@@ -59,6 +59,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
   end
 
   def update
@@ -76,7 +80,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: 1)
+    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
   def set_item
@@ -85,8 +89,8 @@ class ItemsController < ApplicationController
 
 
   def update_item_params
-    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: 1)
-    # params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: current_user.id)
+    
+    params.require(:item).permit(:user_id, :image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: current_user.id)
   end
 
 end
