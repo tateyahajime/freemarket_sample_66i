@@ -189,13 +189,15 @@
   -#         .main__categories-box-area-image-catch
   -# 手打ちの仮データのため残しておく　↑
 
-
+-if user_signed_in?
   .main__Exhibition
     .main__Exhibition-image
       .main__Exhibition-image-text
         出品
       .main__Exhibition-image-logo
         =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
+- else
+  .main__Exhibition_not
 
 = render "footer"
 
