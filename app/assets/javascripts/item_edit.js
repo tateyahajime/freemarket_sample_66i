@@ -29,7 +29,7 @@ $(document).on('turbolinks:load', function(){
         $(box).attr('id', `delete_btn_${index}`);
       })
       var count = $('.preview-box').length;
-      if (count == 5) {
+      if (count === 5) {
         $('.label-content').hide();
       }
     }
@@ -49,7 +49,7 @@ $(document).on('turbolinks:load', function(){
       reader.readAsDataURL(file);
       reader.onload = function() {
         var image = this.result;
-        if ($(`#preview-box__${id}`).length == 0) {
+        if ($(`#preview-box__${id}`).length === 0) {
           var count = $('.preview-box').length;
           var html = buildHTML(id);
           var prevContent = $('.label-content').prev();
@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
         }
         $(`#preview-box__${id} img`).attr('src', `${image}`);
         var count = $('.preview-box').length;
-        if (count == 5) { 
+        if (count === 5) { 
           $('.label-content').hide();
         }
 
@@ -82,7 +82,7 @@ $(document).on('turbolinks:load', function(){
       if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
         $(`#item_images_attributes_${id}_image`).val("");
         var count = $('.preview-box').length;
-        if (count == 4) {
+        if (count === 4) {
           $('.label-content').show();
         }
         setLabel(count);
@@ -93,7 +93,7 @@ $(document).on('turbolinks:load', function(){
       } else {
 
         $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
-        if (count == 4) {
+        if (count === 4) {
           $('.label-content').show();
         }
 
