@@ -2,7 +2,7 @@
   .sidebar_contents
     .sidebar_contents-1
       =form_with do |f|
-        =f.button "マイページ", class: "sidebar_btn", onclick: "location.href=''"
+        =f.button "マイページ", class: "sidebar_btn", onclick: "location.href='/mypages/mypage'"
         .sidebar_contents-2
         =f.button "いいね！一覧", class: "sidebar_btn", onclick: "location.href=''"
         .sidebar_contents-3
@@ -35,4 +35,4 @@
           .sidebar_contents2-5
           =f.button "本人情報", class: "sidebar_btn", onclick: "location.href='register_user_data'"
           .sidebar_contents2-6
-          =f.button "ログアウト", class: "sidebar_btn", onclick: "location.href='logout'"
+          =f.button "ログアウト", class: "sidebar_btn", onclick: "location.href='/mypages/logout'"

@@ -44,6 +44,7 @@ Rails.application.routes.draw do
     collection do
       get :mypage
       get :mypage_edit
+      get :logout
       
     end
   end
