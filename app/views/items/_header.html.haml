@@ -25,6 +25,7 @@
             ブランドから探す
       %ul.header__box__lower-box__right-box
         - if user_signed_in?
+
           =link_to current_user.nickname, mypage_mypages_path
           %li
             = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post

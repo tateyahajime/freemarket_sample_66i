@@ -1,6 +1,6 @@
-.exhibition
-  .exhibition__header
-    .exhibition__header-logo
+.edit
+  .edit__header
+    .edit__header-logo
       = link_to image_tag(src="fmarket_logo_red.svg"),root_path
 
   %main#main
@@ -15,14 +15,27 @@
                   出品画像
                   %span.form--require 必須
                 %p 最大10枚までアップロードできます
-                = f.fields_for :images do |i|
-                  = i.label :image, class: "sell--upload__drop__box" do
-                    .sell--upload__drop__box__imageview
-                      = i.file_field :image,rquired: true,class:"file",style:"display:none;"
-                      %pre
-                        #preview
-                          ドラッグドラッグアンドドロップ
-                          またはクリックしてファイルをアップロード
+                .post__drop__box__container
+                  .prev-content
+                    - @item.images.each do |image|
+                      .preview-box
+                        .upper-box
+                          = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+                        .lower-box
+                          .update-box
+                            %label.edit-btn 編集
+                          .delete-box
+                            .delete-btn
+                              %span 削除
+                  .label-content
+                    = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+                      %pre.label-box__text-visible クリックしてファイルをアップロード
+                  .hidden-content
+                    = f.fields_for :images do |i|
+                      = i.file_field :image, class: "hidden-field"
+                      = i.check_box:_destroy, class: "hidden-checkbox"
+                    - @item.images.length.upto(4) do |i|
+                      %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
               .sell__content
                 .form__group
                   %label
@@ -39,15 +52,13 @@
                 %h3.sell--sub__head 商品の詳細
                 .sell__form__box
                   .form__group
-                    s.fa-chevron-down.listing-select-wrapper__box--arrow-down
-
                     .listing-form-box
                       .listing-product-detail__category
                         = f.label 'カテゴリー', class: 'listing-default__label'
                         %span.listing-default--require 必須
                         .listing-select-wrapper
                           .listing-select-wrapper__box
-                          %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+                            = f.collection_select :category_id, @category_parent_array, :id, :name, {prompt: "---"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                     %label
                       サイズ
                       %span.form--require 必須
@@ -133,17 +144,17 @@
                 = link_to 'キャンセル', "/items/#{@item.id}", class: "btn--gray"
 
           
-  .exhibition__footer
-  .exhibition__footer-links
-    .exhibition__footer-links-title
+  .edit__footer
+  .edit__footer-links
+    .edit__footer-links-title
       =link_to "プライバシーポリシー", "https://www.mercari.com/jp/privacy/"
-    .exhibition__footer-links-title
+    .edit__footer-links-title
       =link_to "メルカリ利用規約", "https://www.mercari.com/jp/tos/"
-    .exhibition__footer-links-title
+    .edit__footer-links-title
       =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/tokutei/"
-  .exhibition__footer-image
+  .edit__footer-image
     = link_to image_tag(src="logo_white.svg"),root_path
-  .exhibition__footer-end
+  .edit__footer-end
     © Mercari, Inc.
 
 
