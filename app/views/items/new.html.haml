@@ -18,14 +18,19 @@
                   出品画像
                   %span.form--require 必須
                 %p 最大10枚までアップロードできます
+              
+              #image_box
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.image.url, data: { index: i }, width: "80", height: '80'
                 = f.fields_for :images do |i|
                   = i.label :image, class: "sell--upload__drop__box" do
                     .sell--upload__drop__box__imageview
+                  
                       = i.file_field :image,rquired: true,class:"file",style:"display:none;"
+                      %span.js-remove 削除
                       %pre
-                        #preview
-                          ドラッグドラッグアンドドロップ
-                          またはクリックしてファイルをアップロード
+                        #previews
               .sell__content
                 .form__group
                   %label

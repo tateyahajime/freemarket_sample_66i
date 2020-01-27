@@ -1,6 +1,5 @@
 = render "header"
 .pan
-  -# エラーが出てしまったので、購入機能実装後また直します。
   - breadcrumb :show
   = breadcrumbs separator: " &rsaquo; "
 .show
@@ -71,31 +70,41 @@
         (税込)
       %span.show__product-price-3
         送料込み
+  -if user_signed_in? && current_user.id == @item.user_id
+    .show-2
+      .show__product-btn2
+        =link_to "商品の編集",edit_item_path(@item.id) , method: :get
+      .show__product-or
+        or
+      .show__product-btn3
+        =link_to "商品を一旦停止する",root_path
 
-    .show__product-btn
-      =link_to "購入画面に進む","/cards/#{@item.id}/buy_view"
-
-    .show__product-btn2
-      =link_to "商品の編集",edit_item_path(@item.id) , method: :get
-    .show__product-or
-      or
-    .show__product-btn3
-      =link_to "商品を一旦停止する",root_path
-
-    .show__product-btn4
+      .show__product-btn4
      
-      =link_to "この商品を削除する", item_path(@item.id),method: :delete
+        =link_to "この商品を削除する", item_path(@item.id),method: :delete
+      .show__product-text
+        .show__product-text-1
+          = @item.description
+        .show__product-iine
+          %span.show__product-iine-1
+            ♡ いいね！ 12
+          %span.show__product-iine-inappropriate
+            =link_to "不適切な商品の報告",root_path
+          %span.show__product-iine-relief
+            =link_to "あんしん・あんぜんへの取り組み", root_path
+  
+  - elsif user_signed_in?
 
-    .show__product-text
-      .show__product-text-1
-        = @item.description
-    .show__product-iine
-      %span.show__product-iine-1
-        ♡ いいね！ 12
-      %span.show__product-iine-inappropriate
-        =link_to "不適切な商品の報告",root_path
-      %span.show__product-iine-relief
-        =link_to "あんしん・あんぜんへの取り組み", root_path
+    .show-2
+      .show__product-btn
+        =link_to "購入画面に進む",buy_view_cards_path
+  - else
+    .show-2
+      .show__product-btn
+        =link_to "購入画面に進む",new_signup_path
+    
+
+
   .show__comment
     .show__comment-text
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
