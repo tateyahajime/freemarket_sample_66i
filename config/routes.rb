@@ -45,6 +45,9 @@ Rails.application.routes.draw do
       get :mypage
       get :mypage_edit
       get :logout
+      get :register_user_data
+      get :credit
+      get :credit_data
       
     end
   end
