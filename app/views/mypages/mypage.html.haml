@@ -1,4 +1,4 @@
--# = render "header" 
+=render partial:'items/header'
 .all
   .all1
     = render "sidebar"
@@ -65,4 +65,4 @@
           =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
 
 
--# = render "footer"
+= render "items/footer"
