@@ -41,9 +41,10 @@ Rails.application.routes.draw do
   end
 
   resources :mypages do
-    member do
+    collection do
       get :mypage
       get :mypage_edit
+      
     end
   end
 
