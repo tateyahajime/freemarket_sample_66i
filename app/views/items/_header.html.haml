@@ -25,7 +25,7 @@
             ブランドから探す
       %ul.header__box__lower-box__right-box
         - if user_signed_in?
-          =link_to current_user.nickname, root_path
+          = link_to current_user.nickname, root_path
 
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__box__lower-box__right-box__btn__logout"
@@ -36,7 +36,9 @@
             = link_to "ログイン", new_user_session_path, class:"header__box__lower-box__right-box__btn__login"
 
           %li
-            = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
+            = link_to icon('fab', "facebook", class: "facebook1"), user_facebook_omniauth_authorize_path, method: :post
+            
 
           %li
-            = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
+            = link_to icon('fab', 'google', class: "google1"), user_google_oauth2_omniauth_authorize_path, method: :post
+           

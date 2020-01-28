@@ -97,13 +97,22 @@
       }
       &__right-box {
         display: flex;
+        a {
+          font-size: 20px;
+          color: black
+        }
+        a:hover {
+          opacity: 0.3;
+        }
         &__btn {
           border-radius: 4px;
           text-align: right;
           margin: 0;
           padding: 0 10px;
           line-height: 30px;
-
+          &__logout {
+            margin-left: 20px;
+          }
         &__new {
           
           background-color: rgb(234, 53, 45);
@@ -141,5 +150,17 @@ li {
   list-style: none;
   margin: 0 0 0 8px;
   font-size: 14px;
+}
+
+.facebook1 {
+  font-size: 38px;
+  color: blue;
+  margin-left: 10px;
+}
+
+.google1 {
+  font-size: 38px;
+  color: black;
+  margin-left: 10px;
 }
 
