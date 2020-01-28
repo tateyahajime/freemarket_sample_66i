@@ -55,8 +55,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def mypage
-  end
 
   def edit
     @category_parent_array = []
@@ -73,8 +71,8 @@ class ItemsController < ApplicationController
     else
       render "edit"
     end
-
   end
+
 
 
   private
@@ -89,8 +87,7 @@ class ItemsController < ApplicationController
 
 
   def update_item_params
-    
-    params.require(:item).permit(:user_id, :image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :id]).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :item_name, :category_id, :description, :condition, :charges, :date, :brand, :size,:prefectures, :price, :prefectures, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
 end

@@ -1,4 +1,4 @@
--# = render "header" 
+=render partial:'items/header'
 .all
   .all1
     = render "sidebar"
@@ -23,7 +23,7 @@
           .mypage__menu-area-logo
             = link_to image_tag(src="logo_red.svg"),root_path
         .mypage__menu-text
-          あああああああああ
+          こんにちは
         .mypage__menu-time
           1日前
       .mypage__menu
@@ -31,7 +31,7 @@
           .mypage__menu-area-logo
             = link_to image_tag(src="logo_red.svg"),root_path
         .mypage__menu-text
-          あああああああああ
+          こんにちは
         .mypage__menu-time
           1日前
       .mypage__menu
@@ -39,7 +39,7 @@
           .mypage__menu-area-logo
             = link_to image_tag(src="logo_red.svg"),root_path
         .mypage__menu-text
-          あああああああああ
+          こんにちは
         .mypage__menu-time
           1日前
       .mypage__list2
@@ -65,4 +65,4 @@
           =link_to icon('fas', 'camera', class: "main__Exhibition-image-logo-camera"),new_item_path,data: {"turbolinks" => false}
 
 
--# = render "footer"
+= render "items/footer"
