@@ -37,11 +37,12 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      get 'search'
     end
   end
 
   resources :mypages do
-    collection do
+    member do
       get :mypage
       get :mypage_edit
       get :logout

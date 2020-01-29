@@ -31,5 +31,9 @@ class Item < ApplicationRecord
   enum condition: {"新品、未使用": 1,"未使用に近い": 2,"目立った傷や汚れなし": 3, "やや傷や汚れあり": 4,"傷や汚れあり": 5, "全体的に状態が悪い": 6}
   enum size: {"XXS以下": 1,"XS(SS)": 2,"S": 3,"M": 4,"L": 5,"XL(LL)": 6,"2XL(3L)": 7,"3XL(4L)": 8,"4XL(5L)以上": 9, "FREE SIZE": 10}
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where("item_name LIKE(?)", "%#{search}%")
+  end
  
 end

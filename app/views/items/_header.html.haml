@@ -6,10 +6,13 @@
         = link_to root_path do
           = image_tag(src= "fmarket_logo_red.svg",class: "header__box__upper-box__logo__image")
       .header__box__upper-box__search
-        %form.logo-and-search__search.right-float
-          %input{value:"", placeholder:"何かお探しですか？" }
-          = link_to do
-            %i.fa.fa-search
+        .logo-and-search__search.right-float
+        = form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |f|
+          =f.text_field :keyword, placeholder: "何をお探しですか？", class: "search_input"
+          -# = submit_tag 'search', :name => nil
+          -# %input{value:"", placeholder:"何かお探しですか？",id: "keyword" }
+          -# = link_to do
+          %i.fa.fa-search
     .header__box__lower-box
       .header__box__lower-box__left-box
         .header__box__lower-box__left-box__category
@@ -25,7 +28,7 @@
             ブランドから探す
       %ul.header__box__lower-box__right-box
         - if user_signed_in?
-          = link_to current_user.nickname, root_path
+          = link_to current_user.nickname, mypage_mypage_path(current_user)
 
           %li
             = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header__box__lower-box__right-box__btn__logout"
