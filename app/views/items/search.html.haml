@@ -1,0 +1,20 @@
+.search
+  .search-container
+    .search-left
+      = render "header"
+    .search-right
+      %section.items-box-container
+        -if @search.present?
+          %h2.search-result-head
+            =@search
+            %span.search-result-head-text
+              
+          .search-result-number
+            ="1-#{@items.count}件表示"
+        -else
+          %h2.search-result-nil
+      
+        .items-box-content
+          = render "search" 
+
+          =render "footer"

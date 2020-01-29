@@ -1,7 +1,7 @@
 class MypagesController < ApplicationController
 
   def mypage
-    
+    @user = User.find(params[:id])
   end
   def mypage_edit
   end

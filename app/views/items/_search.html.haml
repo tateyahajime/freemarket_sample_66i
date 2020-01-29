@@ -1,0 +1,20 @@
+.main__categories
+  .main__categories-box
+    .main__categories-box-list1
+      .main__categories-box-list1-title
+       
+      .main__categories-box-list1-link
+       
+      .main__categories-box-area
+        - @items.each do |item|
+          =link_to "/items/#{item.id}" do
+           
+            .main__categories-box-area-image
+              .main__categories-box-area-image-area
+                .main__categories-box-area-image-area-image
+                  = image_tag (item.images.first.image.url)           
+                  .main__categories-box-area-image-area-price
+                    ¥
+                    = item.price
+                  .main__categories-box-area-image-catch
+                    = item.description

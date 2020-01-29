@@ -35,14 +35,11 @@
           = link_to "もっと見る >",root_path
       .main__categories-box-area
         - @item.each do |item|
-          =link_to "/items/#{item.id}", method: :get do
+          =link_to "/items/#{item.id}" do
             .main__categories-box-area-image
               .main__categories-box-area-image-area
                 .main__categories-box-area-image-area-image
-                  = image_tag (item.images.first.image.url)
-
-                
-                     
+                  = image_tag (item.images.first.image.url)           
                   .main__categories-box-area-image-area-price
                     ¥
                     = item.price
