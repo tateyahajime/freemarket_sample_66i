@@ -2,6 +2,8 @@
 # README
 
 
+
+
 # freemarket_sample_66i DB設計
 ## usersテーブル
 |Column|Type|Options|
